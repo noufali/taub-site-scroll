@@ -178,31 +178,7 @@ function dataViz() {
     w.id = id;
     bigLetter.appendChild(w);
   }
-  $.ajax({
-    url: "https://geoip-db.com/jsonp",
-    jsonpCallback: "callback",
-    dataType: "jsonp",
-    success: function( location ) {
-      $('#city').html(location.city + ", " + location.country_name);
-      $('#date').html(date);
-    }
-  });
-  function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    seconds = today.getSeconds();
-    mili = today.getMilliseconds();
-    m = checkTime(m);
-    seconds = checkTime(seconds);
-    document.getElementById('time').innerHTML = h + ":" + m + ":" + seconds;
-    var t = setTimeout(startTime, 500);
-  }
-  startTime();
-  function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-  }
+
 
   function animate(){
     let val = mapped(seconds, 0,60,0,1000);
@@ -212,7 +188,7 @@ function dataViz() {
     }
     requestAnimationFrame(animate);
   }
-  animate();
+  //animate();
 }
 
 
