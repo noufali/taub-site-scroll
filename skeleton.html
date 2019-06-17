@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+  <nav class="demos">
+    <a class="demo" href="index.html"><span style="font-size:11px">01</span><br><span>intro</span></a>
+    <a class="demo" href="mouse.html"><span style="font-size:11px">02</span><br> <span>mouse</span></a>
+    <a class="demo" href="grid.html"><span style="font-size:11px">03</span><br> <span>grid</span></a>
+    <a class="demo" href="data.html"><span style="font-size:11px">04</span><br> <span>data</span></a>
+    <a class="demo demo--current demo-magneto" href="skeleton.html"><span style="font-size:11px">05</span><br> <span>skeleton</span></a>
+    <a class="demo" href="wave.html"><span style="font-size:11px">06</span><br> <span>Wave</span></a>
+  </nav>
+
+  <svg version="1.1" id="work" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+   y="0px" viewBox="0 0 1366 768" xml:space="preserve">
+    <path style="fill:#EFDFD1" class="st0" d="M323.4,532.8l-74.8-300h33.2L343.4,488l70.4-255.2H451l70.4,256l61.6-256h31.6l-74.4,300h-38.4L431,277.2
+    	l-70.4,255.6H323.4z"/>
+    <path style="fill:#EFDFD1" class="st0" d="M621.4,432.8c0-33.86,6.73-59.4,20.2-76.6c13.46-17.2,33.4-25.8,59.8-25.8c26.13,0,45.93,8.6,59.4,25.8
+    	c13.46,17.2,20.2,42.74,20.2,76.6c0,33.87-6.74,59.4-20.2,76.6c-13.47,17.2-33.27,25.8-59.4,25.8c-26.4,0-46.34-8.6-59.8-25.8
+    	C628.13,492.2,621.4,466.67,621.4,432.8z M651.4,432.8c0,49.87,16.66,74.8,50,74.8c33.06,0,49.6-24.93,49.6-74.8
+    	c0-50.13-16.54-75.2-49.6-75.2C668.06,357.6,651.4,382.67,651.4,432.8z"/>
+    <path style="fill:#EFDFD1" class="st0" d="M921.8,352.8l-42,24.4c-8.8,5.34-15.47,11.34-20,18c-4.54,6.67-7.07,15.2-7.6,25.6v112h-30v-200h28v46
+    	c7.46-17.6,19.33-31.06,35.6-40.4l20.8-12L921.8,352.8z"/>
+    <path style="fill:#EFDFD1" class="st0" d="M957,232.8h30v180.4h33.6l54.8-80.4h34l-65.6,94.4l73.6,105.6H1081l-63.2-92.4H987v92.4h-30V232.8z"/>
+  </svg>
+
+  <svg id="skeleton" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+  y="0px" viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
+    <path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M323.4,532.8l-74.8-300h33.2L343.4,488l70.4-255.2H451l70.4,256l61.6-256h31.6l-74.4,300h-38.4L431,277.2
+    l-70.4,255.6H323.4z"/>
+    <path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M621.4,432.8c0-33.86,6.73-59.4,20.2-76.6c13.46-17.2,33.4-25.8,59.8-25.8c26.13,0,45.93,8.6,59.4,25.8
+    c13.46,17.2,20.2,42.74,20.2,76.6c0,33.87-6.74,59.4-20.2,76.6c-13.47,17.2-33.27,25.8-59.4,25.8c-26.4,0-46.34-8.6-59.8-25.8
+    C628.13,492.2,621.4,466.67,621.4,432.8z M651.4,432.8c0,49.87,16.66,74.8,50,74.8c33.06,0,49.6-24.93,49.6-74.8
+    c0-50.13-16.54-75.2-49.6-75.2C668.06,357.6,651.4,382.67,651.4,432.8z"/>
+    <path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4"class="st0" d="M921.8,352.8l-42,24.4c-8.8,5.34-15.47,11.34-20,18c-4.54,6.67-7.07,15.2-7.6,25.6v112h-30v-200h28v46
+    c7.46-17.6,19.33-31.06,35.6-40.4l20.8-12L921.8,352.8z"/>
+    <path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M957,232.8h30v180.4h33.6l54.8-80.4h34l-65.6,94.4l73.6,105.6H1081l-63.2-92.4H987v92.4h-30V232.8z"/>
+    <circle style="fill:#EFDFD1" style class="st1" cx="957" cy="233" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="987" cy="233" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="850" cy="376.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="880" cy="376.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="860" cy="394.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="852" cy="420.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="850" cy="332.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="822" cy="332.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="852" cy="532.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="822" cy="532.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="507.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="642.2" cy="510.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="760.2" cy="510.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="642.2" cy="355.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="621.2" cy="432.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="781.2" cy="432.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="651.2" cy="432.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="751.2" cy="432.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="760.2" cy="355.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="534.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="357.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="330.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="614.2" cy="232.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="583.2" cy="232.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="281.2" cy="232.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="248.2" cy="232.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="451.2" cy="232.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="414.2" cy="232.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="431.2" cy="277.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="540.2" cy="532.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="521.2" cy="489.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="502.2" cy="532.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="360.2" cy="532.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="343.2" cy="489.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="324.2" cy="532.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="907" cy="326.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="886" cy="338.81" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="987" cy="413" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="922" cy="352.19" r="1.81"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="987" cy="441" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="1018" cy="441" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="957" cy="533" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="987" cy="533" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="1081" cy="533" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="1117" cy="533" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="1076" cy="333" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="1109" cy="333" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="1020" cy="413" r="2"/>
+    <circle style="fill:#EFDFD1" class="st1" cx="1044" cy="428" r="2"/>
+  </svg>
+
+</body>
+<script src="js/skeleton.js"></script>
+</html>
