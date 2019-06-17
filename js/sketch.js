@@ -170,25 +170,63 @@ function showAnatomy() {
 
 // fifth section - data visualizations
 function dataViz() {
-  // WORD SPANS
-  for ( let i = 0 ; i < word.length ; i++ ) {
-    let w = document.createElement('span');
-    w.textContent = word[i];
-    let id = 'w' + i;
-    w.id = id;
-    bigLetter.appendChild(w);
+  let index = document.getElementById("whatyear").value;
+  let data = [
+    {"year": "2018", "month": "April", "private": "0.14", "goods": "0.22", "services": "0.13"},
+    {"year": "2018", "month": "May", "private": "0.22", "goods": "0.42", "services": "0.18"},
+    {"year": "2018", "month": "June", "private": "0.17", "goods": "0.14", "services": "0.18"},
+    {"year": "2018", "month": "July", "private": "0.22", "goods": "0.37", "services": "0.20"},
+    {"year": "2018", "month": "August", "private": "0.13", "goods": "0.08", "services": "0.13"},
+    {"year": "2018", "month": "September", "private": "0.16", "goods": "0.27", "services": "0.14"},
+    {"year": "2018", "month": "October", "private": "0.19", "goods": "0.18", "services": "0.19"},
+    {"year": "2018", "month": "November", "private": "0.11", "goods": "0.03", "services": "0.12"},
+    {"year": "2018", "month": "December", "private": "0.20", "goods": "0.18", "services": "0.20"},
+    {"year": "2019", "month": "January", "private": "0.21", "goods": "0.42", "services": "0.16"},
+    {"year": "2019", "month": "February", "private": "0.17", "goods": "0.19", "services": "0.17"},
+    {"year": "2019", "month": "March", "private": "0.12", "goods": "0.00", "services": "0.14"},
+    {"year": "2019", "month": "April", "private": "0.21", "goods": "0.25", "services": "0.21"}
+  ];
+
+  let dataPt = data[index];
+  $( "#data-month" ).text(dataPt.month);
+  $( "#data-year" ).text(dataPt.year);
+
+  let private = mapped(dataPt.private,0.11,0.22,300,600);
+  let goods = mapped(dataPt.private,0.00,0.42,300,600);
+  let services = mapped(dataPt.private,0.12,0.21,300,500);
+
+  if (private > 600) {
+    private = 600;
   }
 
-
-  function animate(){
-    let val = mapped(seconds, 0,60,0,1000);
-    for (let n=0;n<word.length;n++) {
-      let letterDiv = document.getElementById("w" + n);
-      letterDiv.style.fontVariationSettings = " 'wght' " + val;
-    }
-    requestAnimationFrame(animate);
+  if (goods > 600) {
+    goods = 600;
   }
-  //animate();
+  if (services > 500) {
+    services = 500;
+  };
+
+  if (private < 300) {
+    private = 300;
+  }
+  if (goods < 300) {
+    goods = 300;
+  }
+  if (services < 300) {
+    services = 300;
+  };
+
+  let graph1 = document.getElementById("graph-1");
+  let graph2 = document.getElementById("graph-2");
+  let graph3 = document.getElementById("graph-3");
+
+  graph1.style.fontVariationSettings = " 'wght' " + private;
+  //console.log(private);
+  graph2.style.fontVariationSettings = " 'wght' " + goods;
+  graph3.style.fontVariationSettings = " 'wght' " + services;
+  console.log(services);
+
+  requestAnimationFrame(dataViz);
 }
 
 

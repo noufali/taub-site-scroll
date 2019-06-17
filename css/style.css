@@ -35,19 +35,6 @@ body {
   padding: 0px;
 }
 
-.parallax {
-
-  /* Set a specific height */
-  height: 100%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
-
 a {
   font-family: TaubSans;
   font-variation-settings: 'wght' 100;
@@ -217,43 +204,6 @@ a.demo--current {
   background-color: #7569A9;
 
 }
-#dataSection {
-  background-color: #efdfd1;
-}
-#location {
-  width: 15%;
-  height: auto;
-  float: left;
-  font-family: TaubSans;
-  font-variation-settings: 'wght' 80;
-  font-size: 1.3em;
-  color: #f2635d;
-  padding:6em;
-}
-
-#Hello {
-  /* background-color: aqua; */
-  float: left;
-  width: 100vh;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: TaubDisplayA;
-  font-variation-settings: 'wght' 200;
-  font-size: 70vh;
-  color: #f2635d;
-  padding-top: 0.3em;
-}
-
-#time {
-  font-family: TaubSans;
-  font-variation-settings: 'wght' 150;
-  font-size: 50px;
-  width: auto;
-  height:auto;
-  margin-top: 50px;
-}
 
 #skeleton, #work {
   visibility: hidden;
@@ -271,11 +221,122 @@ a.demo--current {
   flex-wrap: wrap;
 }
 
-.letter {
-  /* position: absolute; */
+#dataSection {
+  background-color: #222222;
+  display: flex;
+  flex-direction: row;
+}
+#data-driven {
+  /* background-color: brown; */
+  width: 20%;
+  height: auto;
+  font-family: TaubSans;
+  font-variation-settings: 'wght' 50;
+  font-size: 3vh;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#data-interactive {
+  /* background-color: purple; */
+  line-height: 0.2em;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.5);
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15%;
+  height: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+#dataGroup {
+  /* background-color: pink; */
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+#graph-1 {
+  /* background-color: lightpink; */
+  width: 20%;
+  height: 100%;
   font-family: TaubDisplayA;
-  font-variation-settings: 'wght' 500;
-  font-size: 20vh;
-  color: #121c4e;
-  animation: loadin 4s infinite linear;
+  font-size: 160vh;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #f9ac84;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#graph-2 {
+  /* background-color: green; */
+  width: 20%;
+  height: 100%;
+  font-family: TaubDisplayB;
+  font-size: 160vh;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #f2635d;
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+}
+
+#graph-3 {
+  /* background-color: purple; */
+  width: 1%;
+  height: 100%;
+  font-family: TaubDisplayC;
+  font-size: 160vh;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #fac8bf;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: -50px;
 }
