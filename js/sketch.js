@@ -172,59 +172,63 @@ function showAnatomy() {
 function dataViz() {
   let index = document.getElementById("whatyear").value;
   let data = [
-    {"year": "2018", "month": "April", "private": "0.14", "goods": "0.22", "services": "0.13"},
-    {"year": "2018", "month": "May", "private": "0.22", "goods": "0.42", "services": "0.18"},
-    {"year": "2018", "month": "June", "private": "0.17", "goods": "0.14", "services": "0.18"},
-    {"year": "2018", "month": "July", "private": "0.22", "goods": "0.37", "services": "0.20"},
-    {"year": "2018", "month": "August", "private": "0.13", "goods": "0.08", "services": "0.13"},
-    {"year": "2018", "month": "September", "private": "0.16", "goods": "0.27", "services": "0.14"},
-    {"year": "2018", "month": "October", "private": "0.19", "goods": "0.18", "services": "0.19"},
-    {"year": "2018", "month": "November", "private": "0.11", "goods": "0.03", "services": "0.12"},
-    {"year": "2018", "month": "December", "private": "0.20", "goods": "0.18", "services": "0.20"},
-    {"year": "2019", "month": "January", "private": "0.21", "goods": "0.42", "services": "0.16"},
-    {"year": "2019", "month": "February", "private": "0.17", "goods": "0.19", "services": "0.17"},
-    {"year": "2019", "month": "March", "private": "0.12", "goods": "0.00", "services": "0.14"},
-    {"year": "2019", "month": "April", "private": "0.21", "goods": "0.25", "services": "0.21"}
+    {"year": "2018", "month": "April", "privatePerc": "0.14", "goodsPerc": "0.22", "servicePer": "0.13", "privateTho": "126,048.160", "goodsTho": "20,573.179", "servicesTho": "105,474.981"},
+    {"year": "2018", "month": "May", "privatePerc": "0.22", "goodsPerc": "0.42", "servicePer": "0.18", "privateTho": "126,323.795", "goodsTho": "20,659.955", "servicesTho": "105,663.840"},
+    {"year": "2018", "month": "June", "privatePerc": "0.17", "goodsPerc": "0.14", "servicePer": "0.18", "privateTho": "126,544.810", "goodsTho": "20,689.282", "servicesTho": "105,855.528"},
+    {"year": "2018", "month": "July", "privatePerc": "0.22", "goodsPerc": "0.37", "servicePer": "0.20", "privateTho": "126,829.139", "goodsTho": "20,766.569", "servicesTho": "106,062.570"},
+    {"year": "2018", "month": "August", "privatePerc": "0.13", "goodsPerc": "0.08", "servicePer": "0.13", "privateTho": "126,988.113", "goodsTho": "20,782.417", "servicesTho": "106,205.696"},
+    {"year": "2018", "month": "September", "privatePerc": "0.16", "goodsPerc": "0.27", "servicePer": "0.14", "privateTho": "127,187.340", "goodsTho": "20,837.603", "servicesTho": "106,349.736"},
+    {"year": "2018", "month": "October", "privatePerc": "0.19", "goodsPerc": "0.18", "servicePer": "0.19", "privateTho": "127,425.327", "goodsTho": "20,875.551", "servicesTho": "106,549.776"},
+    {"year": "2018", "month": "November", "privatePerc": "0.11", "goodsPerc": "0.03", "servicePer": "0.12", "privateTho": "127,561.742", "goodsTho": "20,882.065", "servicesTho": "106,679.677"},
+    {"year": "2018", "month": "December", "privatePerc": "0.20", "goodsPerc": "0.18", "servicePer": "0.20", "privateTho": "127,810.745", "goodsTho": "20,919.687", "servicesTho": "106,891.058"},
+    {"year": "2019", "month": "January", "privatePerc": "0.21", "goodsPerc": "0.42", "servicePer": "0.16", "privateTho": "128,074.432", "goodsTho": "21,007.174", "servicesTho": "107,067.258"},
+    {"year": "2019", "month": "February", "privatePerc": "0.17", "goodsPerc": "0.19", "servicePer": "0.17", "privateTho": "128,294.340", "goodsTho": "21,046.653", "servicesTho": "107,247.687"},
+    {"year": "2019", "month": "March", "privatePerc": "0.12", "goodsPerc": "0.00", "servicePer": "0.14", "privateTho": "128,445.777", "goodsTho": "21,046.099", "servicesTho": "107,399.679"},
+    {"year": "2019", "month": "April", "privatePerc": "0.21", "goodsPerc": "0.25", "servicePer": "0.21", "privateTho": "128,720.753", "goodsTho": "21,098.064", "servicesTho": "107,622.690"}
   ];
 
   let dataPt = data[index];
   $( "#data-month" ).text(dataPt.month);
   $( "#data-year" ).text(dataPt.year);
 
-  let private = mapped(dataPt.private,0.11,0.22,300,600);
-  let goods = mapped(dataPt.private,0.00,0.42,300,600);
-  let services = mapped(dataPt.private,0.12,0.21,300,500);
+  $( "#num-1" ).text(dataPt.privateTho);
+  $( "#num-2" ).text(dataPt.goodsTho);
+  $( "#num-3" ).text(dataPt.servicesTho);
 
-  if (private > 600) {
-    private = 600;
+  let privatePerc = mapped(dataPt.privatePerc,0.11,0.22,300,600);
+  let goodsPerc = mapped(dataPt.privatePerc,0.00,0.42,300,600);
+  let servicePer = mapped(dataPt.privatePerc,0.12,0.21,300,500);
+
+  if (privatePerc > 600) {
+    privatePerc = 600;
   }
 
-  if (goods > 600) {
-    goods = 600;
+  if (goodsPerc > 600) {
+    goodsPerc = 600;
   }
-  if (services > 500) {
-    services = 500;
+  if (servicePer > 500) {
+    servicePer = 500;
   };
 
-  if (private < 300) {
-    private = 300;
+  if (privatePerc < 300) {
+    privatePerc = 300;
   }
-  if (goods < 300) {
-    goods = 300;
+  if (goodsPerc < 300) {
+    goodsPerc = 300;
   }
-  if (services < 300) {
-    services = 300;
+  if (servicePer < 300) {
+    servicePer = 300;
   };
 
   let graph1 = document.getElementById("graph-1");
   let graph2 = document.getElementById("graph-2");
   let graph3 = document.getElementById("graph-3");
 
-  graph1.style.fontVariationSettings = " 'wght' " + private;
-  //console.log(private);
-  graph2.style.fontVariationSettings = " 'wght' " + goods;
-  graph3.style.fontVariationSettings = " 'wght' " + services;
-  console.log(services);
+  graph1.style.fontVariationSettings = " 'wght' " + privatePerc;
+  //console.log(privatePerc);
+  graph2.style.fontVariationSettings = " 'wght' " + goodsPerc;
+  graph3.style.fontVariationSettings = " 'wght' " + servicePer;
+  //console.log(servicePer);
 
   requestAnimationFrame(dataViz);
 }

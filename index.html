@@ -119,23 +119,44 @@ c7.46-17.6,19.33-31.06,35.6-40.4l20.8-12L921.8,352.8z"/>
 
 <!-- Data Viz -->
 <div id="dataSection">
-  <div id="data-driven">
-    <p>Data-driven</p>
-    <div id="data-interactive">
-      <p id="data-month" style="font-size:3.5vh;">April</p>
-      <p id="data-year" style="font-size:5vh;font-variation-settings: 'wght' 80;">2019</p>
-      <input type="range" min="0" max="12" value="12" class="slider" id="whatyear">
-      <p style="font-size:1.5vh;opacity:0.2;">Mouse over year to change</p>
-    </div>
-
-  </div>
-  <div id="dataGroup">
+  <div class="data-properties" id="data-title">Data-driven</div>
+  <div id="data-graphs">
     <div id="graph-1">•</div>
     <div id="graph-2">•</div>
     <div id="graph-3">•</div>
   </div>
 
+  <div id="data-stats" class="data-properties">
+    <div id="data-description" style="font-size:2vh;line-height:1.4em">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+    </div>
+
+    <div class="data-properties">
+      <div id="stat-1">
+        <p style="font-size:2vh;font-variation-settings: 'wght' 100;">Total Private Sector Employment</p>
+        <p id="num-1" style="color:#f9ac84">128,720</p>
+      </div>
+
+      <div id="stat-2">
+        <p style="font-size:2vh; font-variation-settings: 'wght' 100;">By Goods-producing Sector</p>
+        <p id="num-2" style="color:#f2635d">21,098</p>
+      </div>
+
+      <div id="stat-3">
+        <p style="font-size:2vh; font-variation-settings: 'wght' 100;">By Service-producing Factor</p>
+        <p id="num-3" style="color:#fac8bf">107,622</p>
+      </div>
+    </div>
+
+    <div id="data-interactive">
+      <p id="data-month" style="font-size:3.5vh;">April</p>
+      <p id="data-year" style="font-size:5vh;font-variation-settings: 'wght' 80;">2019</p>
+      <input type="range" min="0" max="12" value="12" class="slider" id="whatyear">
+      <p style="font-size:1.8vh;opacity:0.2;">Mouse over to change year</p>
+    </div>
+  </div>
 </div>
+
 </body>
 
 <script src="js/sketch.js"></script>

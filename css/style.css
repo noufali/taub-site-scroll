@@ -226,71 +226,34 @@ a.demo--current {
   display: flex;
   flex-direction: row;
 }
-#data-driven {
-  /* background-color: brown; */
-  width: 20%;
-  height: auto;
+
+.data-properties {
   font-family: TaubSans;
   font-variation-settings: 'wght' 50;
-  font-size: 3vh;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.17;
-  letter-spacing: normal;
   color: #ffffff;
-  padding: 3em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
-#data-interactive {
-  /* background-color: purple; */
-  line-height: 0.2em;
-  display: inline-block;
-  vertical-align: bottom;
-  width: 100%;
-
+#data-title {
+  font-size: 3vh;
+  padding: 2.5em;
+  padding-right: 0em;
+  color: #ffffff;
+  white-space: nowrap;
 }
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 2px;
-  background: rgba(255,255,255,0.5);
-  outline: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15%;
-  height: 3px;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-#dataGroup {
+#data-graphs {
   /* background-color: pink; */
-  width: 80%;
-  height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: left;
   flex-wrap: nowrap;
+  width:50%;
+
 }
 
 #graph-1 {
   /* background-color: lightpink; */
-  width: 20%;
+  width: 40%;
   height: 100%;
   font-family: TaubDisplayA;
   font-size: 160vh;
@@ -307,24 +270,20 @@ a.demo--current {
 
 #graph-2 {
   /* background-color: green; */
-  width: 20%;
+  width: 40%;
   height: 100%;
   font-family: TaubDisplayB;
   font-size: 160vh;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
   color: #f2635d;
   display: flex;
   justify-content: flex-end;
+  flex-wrap: nowrap;
   /* align-items: center; */
 }
 
 #graph-3 {
   /* background-color: purple; */
-  width: 1%;
+  width: 10%;
   height: 100%;
   font-family: TaubDisplayC;
   font-size: 160vh;
@@ -339,4 +298,41 @@ a.demo--current {
   justify-content: center;
   align-items: center;
   left: -50px;
+}
+
+#data-stats {
+  padding: 2.5em;
+  font-size: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#stat-1, #stat-2, #stat-3 {
+  line-height:0.4em;
+  margin-bottom: 40px;
+}
+
+#data-interactive {
+  /* background-color: purple; */
+  line-height: 0.2em;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 2px;
+  background: rgba(255,255,255,0.5);
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10%;
+  height: 3px;
+  background: #ffffff;
+  cursor: pointer;
 }
