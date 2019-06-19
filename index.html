@@ -8,6 +8,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <body>
@@ -22,140 +23,165 @@
   </nav>
 
   <!-- INTRODUCTION -->
-  <div id="introSection">
-    <div id="introTitle">
-      <h1 style="font-size:2vh">Introducing</h1>
+  <div class="sections" id="intro-section">
+    <div id="intro-title">
+      <h1 class="sans-h3">Introducing</h1>
     </div>
-    <div id="introDescription">
-      <p>Typography is the means by which language is given form, so we created <b style="font-variation-settings: 'wght' 150">Taub</b> Type to unify, express, and elevate our communications. Named after ADP’s founder Henry Taub, Taub Type is an uplifting, inventive, and empathetic custom type system: Taub Sans and Taub Display. These variable fonts were designed in partnership with Chester Jenkins and reflect a classically proportioned, low contrast design that is workmanlike, elegant and dynamic. <br><br>Taub Display draws its inspiration from the works of Karl Gerstner and Otl Aicher and was drawn on an offset pixel grid, which informs Taub Sans’ construction, and connects to our iconography and data visualizations.</p>
+    <div class="sans-p" id="intro-description">
+      <p>Typography is the means by which language is given form, so we created Taub Type to unify, express, and elevate our communications. Named after ADP’s founder Henry Taub, Taub Type is an uplifting, inventive, and empathetic custom type system: Taub Sans and Taub Display. These variable fonts were designed in partnership with Chester Jenkins and reflect a classically proportioned, low contrast design that is workmanlike, elegant and dynamic. <br><br>Taub Display draws its inspiration from the works of Karl Gerstner and Otl Aicher and was drawn on an offset pixel grid, which informs Taub Sans’ construction, and connects to our iconography and data visualizations.</p>
+    </div>
+  </div>
+
+  <!-- DATA VIZ -->
+  <div class="sections sans-h1" id="data-section">
+    <div id="data-title">
+      <div>
+        <h1 class="sans-h3">Data-driven</h1>
+      </div>
+      <div id="data-description" class="sans-p">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      </div>
+    </div>
+
+    <div id="data-graphs">
+      <span id="graph-1">•</span>
+      <span id="graph-2">•</span>
+      <span id="graph-3">•</span>
+    </div>
+
+    <div id="data-stats">
+      <div id="data-interactive">
+        <p id="data-month" class="sans-h2">April</p>
+        <p id="data-year">2019</p>
+        <input type="range" min="0" max="12" value="12" class="slider" id="whatyear">
+        <p id="data-mouse">Mouse over to change year</p>
+      </div>
+
+      <div>
+        <div id="stat-1">
+          <p class="sans-h3">Total Private Sector Employment</p>
+          <p class="sans-h2" id="num-1" style="color:#f9ac84">128,720</p>
+        </div>
+
+        <div id="stat-2">
+          <p class="sans-h3">By Goods-producing Sector</p>
+          <p class="sans-h2" id="num-2" style="color:#f2635d">21,098</p>
+        </div>
+
+        <div id="stat-3">
+          <p class="sans-h3">By Service-producing Factor</p>
+          <p class="sans-h2" id="num-3" style="color:#fac8bf">107,622</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- INTERACTIVE TEXT -->
-  <div id="animateSection"></div>
+  <div class="sections" id="animate-section"></div>
 
   <!-- CHARACTER GRID -->
-  <div id="gridSection" class="parallax">
-    <div id="gridtitle"> <p>Taub Character Set</p> </div>
-    <div id="gridContainer"></div>
+  <div class="sections" id="grid-section">
+    <div id="grid-title" class="sans-h3">Taub Character Set</div>
+    <div id="grid-container"></div>
   </div>
 
   <!-- ANATOMY -->
-  <div id="AnatomySection"></div>
-  <svg version="1.1" id="work" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-  y="0px" viewBox="0 0 1366 768" xml:space="preserve">
-  <path style="fill:#EFDFD1" class="st0" d="M323.4,532.8l-74.8-300h33.2L343.4,488l70.4-255.2H451l70.4,256l61.6-256h31.6l-74.4,300h-38.4L431,277.2
+  <div class="sections" id="anatomy-section">
+    <svg version="1.1" id="work" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" viewBox="0 0 1366 768" xml:space="preserve">
+    <path style="fill:#EFDFD1" class="st0" d="M323.4,532.8l-74.8-300h33.2L343.4,488l70.4-255.2H451l70.4,256l61.6-256h31.6l-74.4,300h-38.4L431,277.2
+    l-70.4,255.6H323.4z"/>
+    <path style="fill:#EFDFD1" class="st0" d="M621.4,432.8c0-33.86,6.73-59.4,20.2-76.6c13.46-17.2,33.4-25.8,59.8-25.8c26.13,0,45.93,8.6,59.4,25.8
+    c13.46,17.2,20.2,42.74,20.2,76.6c0,33.87-6.74,59.4-20.2,76.6c-13.47,17.2-33.27,25.8-59.4,25.8c-26.4,0-46.34-8.6-59.8-25.8
+    C628.13,492.2,621.4,466.67,621.4,432.8z M651.4,432.8c0,49.87,16.66,74.8,50,74.8c33.06,0,49.6-24.93,49.6-74.8
+    c0-50.13-16.54-75.2-49.6-75.2C668.06,357.6,651.4,382.67,651.4,432.8z"/>
+    <path style="fill:#EFDFD1" class="st0" d="M921.8,352.8l-42,24.4c-8.8,5.34-15.47,11.34-20,18c-4.54,6.67-7.07,15.2-7.6,25.6v112h-30v-200h28v46
+    c7.46-17.6,19.33-31.06,35.6-40.4l20.8-12L921.8,352.8z"/>
+    <path style="fill:#EFDFD1" class="st0" d="M957,232.8h30v180.4h33.6l54.8-80.4h34l-65.6,94.4l73.6,105.6H1081l-63.2-92.4H987v92.4h-30V232.8z"/>
+  </svg>
+
+  <svg id="skeleton" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+  y="0px" viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
+  <path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M323.4,532.8l-74.8-300h33.2L343.4,488l70.4-255.2H451l70.4,256l61.6-256h31.6l-74.4,300h-38.4L431,277.2
   l-70.4,255.6H323.4z"/>
-  <path style="fill:#EFDFD1" class="st0" d="M621.4,432.8c0-33.86,6.73-59.4,20.2-76.6c13.46-17.2,33.4-25.8,59.8-25.8c26.13,0,45.93,8.6,59.4,25.8
+  <path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M621.4,432.8c0-33.86,6.73-59.4,20.2-76.6c13.46-17.2,33.4-25.8,59.8-25.8c26.13,0,45.93,8.6,59.4,25.8
   c13.46,17.2,20.2,42.74,20.2,76.6c0,33.87-6.74,59.4-20.2,76.6c-13.47,17.2-33.27,25.8-59.4,25.8c-26.4,0-46.34-8.6-59.8-25.8
   C628.13,492.2,621.4,466.67,621.4,432.8z M651.4,432.8c0,49.87,16.66,74.8,50,74.8c33.06,0,49.6-24.93,49.6-74.8
   c0-50.13-16.54-75.2-49.6-75.2C668.06,357.6,651.4,382.67,651.4,432.8z"/>
-  <path style="fill:#EFDFD1" class="st0" d="M921.8,352.8l-42,24.4c-8.8,5.34-15.47,11.34-20,18c-4.54,6.67-7.07,15.2-7.6,25.6v112h-30v-200h28v46
+  <path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4"class="st0" d="M921.8,352.8l-42,24.4c-8.8,5.34-15.47,11.34-20,18c-4.54,6.67-7.07,15.2-7.6,25.6v112h-30v-200h28v46
   c7.46-17.6,19.33-31.06,35.6-40.4l20.8-12L921.8,352.8z"/>
-  <path style="fill:#EFDFD1" class="st0" d="M957,232.8h30v180.4h33.6l54.8-80.4h34l-65.6,94.4l73.6,105.6H1081l-63.2-92.4H987v92.4h-30V232.8z"/>
+  <path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M957,232.8h30v180.4h33.6l54.8-80.4h34l-65.6,94.4l73.6,105.6H1081l-63.2-92.4H987v92.4h-30V232.8z"/>
+  <circle style="fill:#EFDFD1" style class="st1" cx="957" cy="233" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="987" cy="233" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="850" cy="376.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="880" cy="376.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="860" cy="394.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="852" cy="420.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="850" cy="332.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="822" cy="332.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="852" cy="532.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="822" cy="532.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="507.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="642.2" cy="510.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="760.2" cy="510.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="642.2" cy="355.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="621.2" cy="432.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="781.2" cy="432.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="651.2" cy="432.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="751.2" cy="432.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="760.2" cy="355.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="534.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="357.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="330.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="614.2" cy="232.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="583.2" cy="232.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="281.2" cy="232.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="248.2" cy="232.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="451.2" cy="232.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="414.2" cy="232.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="431.2" cy="277.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="540.2" cy="532.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="521.2" cy="489.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="502.2" cy="532.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="360.2" cy="532.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="343.2" cy="489.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="324.2" cy="532.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="907" cy="326.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="886" cy="338.81" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="987" cy="413" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="922" cy="352.19" r="1.81"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="987" cy="441" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="1018" cy="441" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="957" cy="533" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="987" cy="533" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="1081" cy="533" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="1117" cy="533" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="1076" cy="333" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="1109" cy="333" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="1020" cy="413" r="2"/>
+  <circle style="fill:#EFDFD1" class="st1" cx="1044" cy="428" r="2"/>
 </svg>
+</div>
 
-<svg id="skeleton" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-y="0px" viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
-<path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M323.4,532.8l-74.8-300h33.2L343.4,488l70.4-255.2H451l70.4,256l61.6-256h31.6l-74.4,300h-38.4L431,277.2
-l-70.4,255.6H323.4z"/>
-<path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M621.4,432.8c0-33.86,6.73-59.4,20.2-76.6c13.46-17.2,33.4-25.8,59.8-25.8c26.13,0,45.93,8.6,59.4,25.8
-c13.46,17.2,20.2,42.74,20.2,76.6c0,33.87-6.74,59.4-20.2,76.6c-13.47,17.2-33.27,25.8-59.4,25.8c-26.4,0-46.34-8.6-59.8-25.8
-C628.13,492.2,621.4,466.67,621.4,432.8z M651.4,432.8c0,49.87,16.66,74.8,50,74.8c33.06,0,49.6-24.93,49.6-74.8
-c0-50.13-16.54-75.2-49.6-75.2C668.06,357.6,651.4,382.67,651.4,432.8z"/>
-<path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4"class="st0" d="M921.8,352.8l-42,24.4c-8.8,5.34-15.47,11.34-20,18c-4.54,6.67-7.07,15.2-7.6,25.6v112h-30v-200h28v46
-c7.46-17.6,19.33-31.06,35.6-40.4l20.8-12L921.8,352.8z"/>
-<path style="fill:none;stroke:#EFDFD1;stroke-miterlimit:10;stroke-dasharray:4" class="st0" d="M957,232.8h30v180.4h33.6l54.8-80.4h34l-65.6,94.4l73.6,105.6H1081l-63.2-92.4H987v92.4h-30V232.8z"/>
-<circle style="fill:#EFDFD1" style class="st1" cx="957" cy="233" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="987" cy="233" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="850" cy="376.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="880" cy="376.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="860" cy="394.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="852" cy="420.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="850" cy="332.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="822" cy="332.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="852" cy="532.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="822" cy="532.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="507.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="642.2" cy="510.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="760.2" cy="510.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="642.2" cy="355.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="621.2" cy="432.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="781.2" cy="432.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="651.2" cy="432.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="751.2" cy="432.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="760.2" cy="355.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="534.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="357.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="701.2" cy="330.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="614.2" cy="232.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="583.2" cy="232.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="281.2" cy="232.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="248.2" cy="232.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="451.2" cy="232.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="414.2" cy="232.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="431.2" cy="277.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="540.2" cy="532.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="521.2" cy="489.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="502.2" cy="532.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="360.2" cy="532.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="343.2" cy="489.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="324.2" cy="532.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="907" cy="326.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="886" cy="338.81" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="987" cy="413" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="922" cy="352.19" r="1.81"/>
-<circle style="fill:#EFDFD1" class="st1" cx="987" cy="441" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="1018" cy="441" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="957" cy="533" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="987" cy="533" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="1081" cy="533" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="1117" cy="533" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="1076" cy="333" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="1109" cy="333" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="1020" cy="413" r="2"/>
-<circle style="fill:#EFDFD1" class="st1" cx="1044" cy="428" r="2"/>
-</svg>
-
-<!-- Data Viz -->
-<div id="dataSection">
-  <div class="data-properties" id="data-title">Data-driven</div>
-  <div id="data-graphs">
-    <div id="graph-1">•</div>
-    <div id="graph-2">•</div>
-    <div id="graph-3">•</div>
-  </div>
-
-  <div id="data-stats" class="data-properties">
-    <div id="data-description" style="font-size:2vh;line-height:1.4em">
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-    </div>
-
-    <div class="data-properties">
-      <div id="stat-1">
-        <p style="font-size:2vh;font-variation-settings: 'wght' 100;">Total Private Sector Employment</p>
-        <p id="num-1" style="color:#f9ac84">128,720</p>
-      </div>
-
-      <div id="stat-2">
-        <p style="font-size:2vh; font-variation-settings: 'wght' 100;">By Goods-producing Sector</p>
-        <p id="num-2" style="color:#f2635d">21,098</p>
-      </div>
-
-      <div id="stat-3">
-        <p style="font-size:2vh; font-variation-settings: 'wght' 100;">By Service-producing Factor</p>
-        <p id="num-3" style="color:#fac8bf">107,622</p>
-      </div>
-    </div>
-
-    <div id="data-interactive">
-      <p id="data-month" style="font-size:3.5vh;">April</p>
-      <p id="data-year" style="font-size:5vh;font-variation-settings: 'wght' 80;">2019</p>
-      <input type="range" min="0" max="12" value="12" class="slider" id="whatyear">
-      <p style="font-size:1.8vh;opacity:0.2;">Mouse over to change year</p>
-    </div>
+<!-- STYLES-->
+<div class="sections" id="styles-section">
+  <div id="styles-title">6 weights<br>12 styles</div>
+  <div id="styles-categories">
+    <p id="styles-1">Taub Sans Light</p>
+    <p id="styles-2">Taub Sans Light Italic</p>
+    <p id="styles-3">Taub Sans Regular</p>
+    <p id="styles-4">Taub Sans Regular Italic</p>
+    <p id="styles-5">Taub Sans Medium</p>
+    <p id="styles-6">Taub Sans Medium Italic</p>
+    <p id="styles-7">Taub Sans Bold</p>
+    <p id="styles-8">Taub Sans Bold Italic</p>
+    <p id="styles-9">Taub Sans Heavy</p>
+    <p id="styles-10">Taub Sans Heavy Italic</p>
+    <p id="styles-11">Taub Sans Super</p>
+    <p id="styles-12">Taub Sans Super Italic</p>
   </div>
 </div>
+
 
 </body>
 

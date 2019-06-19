@@ -33,6 +33,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
 }
 
 a {
@@ -43,7 +44,6 @@ a {
   color: var(--color-link);
   outline: none;
 }
-
 a:hover,
 a:focus {
   color: var(--color-link-hover);
@@ -56,7 +56,6 @@ a:focus {
   --color-link: #000;
   --color-link-hover: #41353d;
 }
-
 .demos {
   position: fixed;
   width: 100%;
@@ -68,21 +67,18 @@ a:focus {
   color: #efdfd1;
   padding: 10px;
   /* transform: translate(-50%, -90%); */
-  top: -44px;
+  top: -100px;
   z-index: 3;
 }
-
 .demo {
   margin: 0 3em;
 }
-
 a.demo--current {
   /* text-decoration: underline; */
   color: #efdfd199;
   /* background-color: #D6D3CC; */
   /* pointer-events: none; */
 }
-
 .demo span {
   text-transform: lowercase;
   font-weight: bold;
@@ -90,76 +86,101 @@ a.demo--current {
   white-space: nowrap;
 }
 
-#animateSection {
-  background-color: #f2635d;
+.sections {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding-top: 3em; */
+  flex-direction: row;
 }
 
-.properties {
+.sans-h1 {
+  font-family: TaubSans;
+  font-size: 18vw;
+  font-variation-settings: 'wght' 100;
+}
+
+.sans-h2 {
+  font-family: TaubSans;
+  font-size: 1.8vw;
+  font-variation-settings: 'wght' 90;
+}
+
+.sans-h3 {
+  font-family: TaubSans;
+  font-size: 1.2vw;
+  font-variation-settings: 'wght' 100;
+}
+
+.sans-p {
+  font-family: TaubSans;
+  font-size:1.3vw;
+  font-variation-settings: 'wght' 50;
+  line-height: 4vh;
+}
+
+.display-T {
   font-family: TaubDisplayB;
   font-size: 55vh;
   font-variation-settings: 'wght' 500;
   color: #efdfd1;
   cursor: default;
+  animation: weight 4s;
 }
 
-#defaultCanvas0 {
-  position: absolute;
+@keyframes weight {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+    font-variation-settings: 'wght' 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+    font-variation-settings: 'wght' 600;
+  }
+  100% {
+    transform: scale(1);
+    font-variation-settings: 'wght' 1000;
+  }
 }
 
-#introSection {
+#intro-section {
   background-color: #121c4e;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: left;
-
-  font-family: TaubSans;
-  font-size: 2vh;
   color: #efdfd1;
+  justify-content: center;
+  align-items: center;
 }
 
-#introTitle {
+#intro-title {
   /* background-color: green; */
-  width: 50%;
-  overflow: hidden;
-  padding: 6em;
+  padding: 10em;
 }
 
-#introDescription {
+#intro-description {
   /* background-color: purple; */
-  padding: 6em;
-  width:40%;
-  font-variation-settings: 'wght' 50;
-  line-height: 4vh;
-  font-size:2.5vh;
-}
-.taub {
-  position: absolute;
-  font-size: 30vh;
-}
-.taub:hover {
-  cursor: pointer;
+  padding: 3em;
+  padding-left: 0em;
+  width:auto;
 }
 
-#gridSection {
+#animate-section {
+  background-color: #f2635d;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid-section {
   background-color: #F2CAC1;
-  padding: 15vh;
+  padding: 60px;
+  flex-direction: column;
   width: auto;
   height: auto;
 }
 
-#gridtitle {
-  font-family: TaubSans;
-  font-size: 1.5em;
-  font-variation-settings: 'wght' 80;
+#grid-title {
   color: #263587;
+  margin-bottom: 20px;
 }
 
-#gridContainer {
+#grid-container {
   /* background-color: pink; */
   display: flex;
   flex-direction: row;
@@ -184,30 +205,13 @@ a.demo--current {
   cursor: pointer;
 }
 
-#zoomLetter {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0,0,0,0.7);
-  font-family: TaubSans-Regular;
-  font-variation-settings: 'wght' 100;
-  width: 200px;
-  height: 200px;
-  font-size: 9em;
-  color: white;
-  padding: 10px;
-  visibility: hidden;
-}
-
-#AnatomySection {
+#anatomy-section {
   background-color: #7569A9;
-
 }
 
 #skeleton, #work {
   visibility: hidden;
-  position: absolute;
+  /* position: absolute; */
   width:0%;
 }
 
@@ -221,106 +225,94 @@ a.demo--current {
   flex-wrap: wrap;
 }
 
-#dataSection {
+#data-section {
   background-color: #222222;
-  display: flex;
-  flex-direction: row;
-}
-
-.data-properties {
-  font-family: TaubSans;
-  font-variation-settings: 'wght' 50;
   color: #ffffff;
 }
 
 #data-title {
-  font-size: 3vh;
-  padding: 2.5em;
-  padding-right: 0em;
+  padding: 60px;
   color: #ffffff;
-  white-space: nowrap;
+  width: 20%;
 }
 #data-graphs {
   /* background-color: pink; */
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
-  width:50%;
-
+  align-items: center;
+  align-content: center;
+  width: 30%;
+  height: auto;
+  padding-left: 1.15em;
 }
 
 #graph-1 {
-  /* background-color: lightpink; */
-  width: 40%;
-  height: 100%;
+  /* background-color: grey; */
+  width: 100%;
+  height: auto;
   font-family: TaubDisplayA;
   font-size: 160vh;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
   color: #f9ac84;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-variation-settings: 'wght' 300;
 }
 
 #graph-2 {
   /* background-color: green; */
-  width: 40%;
-  height: 100%;
-  font-family: TaubDisplayB;
-  font-size: 160vh;
+  width: 100%;
+  height: auto;
+  font-family: TaubDisplayC;
   color: #f2635d;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  /* align-items: center; */
+  font-size: 160vh;
+  font-variation-settings: 'wght' 400;
 }
 
 #graph-3 {
   /* background-color: purple; */
-  width: 10%;
-  height: 100%;
-  font-family: TaubDisplayC;
-  font-size: 160vh;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
+  width: 100%;
+  height: auto;
+  font-family: TaubDisplayB;
+  font-variation-settings: 'wght' 400;
   color: #fac8bf;
+  font-size: 160vh;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: -50px;
+  top: 0.18em;
+  right: 0.51em;
 }
 
 #data-stats {
-  padding: 2.5em;
-  font-size: 3vh;
+  /* background-color: purple; */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
+  flex-flow: column-reverse;
   justify-content: space-between;
-}
-
-#stat-1, #stat-2, #stat-3 {
-  line-height:0.4em;
-  margin-bottom: 40px;
 }
 
 #data-interactive {
   /* background-color: purple; */
-  line-height: 0.2em;
+  line-height: 0.05em;
+}
+
+#data-year {
+  font-size:3vw;
+  font-variation-settings: 'wght' 80;
+  margin-bottom: 0px;
+}
+
+#data-mouse {
+  font-size:1.3vw;
+  font-variation-settings: 'wght' 50;
+  opacity:0.2;
 }
 
 .slider {
   -webkit-appearance: none;
-  width: 80%;
+  width: 100%;
   height: 2px;
   background: rgba(255,255,255,0.5);
   outline: none;
@@ -331,8 +323,288 @@ a.demo--current {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 10%;
+  width: 15%;
   height: 3px;
   background: #ffffff;
   cursor: pointer;
 }
+
+#styles-section{
+  background-color: #efdfd1;
+  color: #263587;
+  padding: 60px;
+}
+#styles-title {
+  font-family: TaubSans;
+  font-variation-settings: 'wght' 100;
+  font-size: 4vw;
+  line-height: 1.4em;
+  padding-right: 5em;
+}
+#styles-categories {
+  font-family: TaubSans;
+  font-size: 2.5vw;
+  line-height: 0.5em;
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+	/* Portrait and Landscape */
+	@media only screen
+	  and (min-device-width: 320px)
+	  and (max-device-width: 568px)
+	  and (-webkit-min-device-pixel-ratio: 2) {
+
+	}
+
+	/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+
+	/* Portrait and Landscape */
+	@media screen
+	  and (device-width: 320px)
+	  and (device-height: 640px)
+	  and (-webkit-device-pixel-ratio: 3) {
+
+	}
+
+	/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+	/* Portrait and Landscape */
+	@media only screen
+	  and (min-device-width: 375px)
+	  and (max-device-width: 667px)
+	  and (-webkit-min-device-pixel-ratio: 2) {
+	}
+
+	/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+	/* Portrait and Landscape */
+	@media only screen
+	  and (min-device-width: 414px)
+	  and (max-device-width: 736px)
+	  and (-webkit-min-device-pixel-ratio: 3) {
+	}
+
+	/* ----------- iPhone X ----------- */
+
+	/* Portrait and Landscape */
+	@media only screen
+	  and (min-device-width: 375px)
+	  and (max-device-width: 812px)
+	  and (-webkit-min-device-pixel-ratio: 3) {
+      .sections {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sans-h1 {
+        font-family: TaubSans;
+        font-size: 13vh;
+        font-variation-settings: 'wght' 130;
+        line-height: 1.4em;
+      }
+
+      .sans-h2 {
+        font-family: TaubSans;
+        font-size: 8vw;
+        font-variation-settings: 'wght' 50;
+        line-height: 1.4em;
+      }
+
+      .sans-h3 {
+        font-family: TaubSans;
+        font-size: 3vw;
+        font-variation-settings: 'wght' 100;
+      }
+
+      .sans-p {
+        font-family: TaubSans;
+        font-size:4vw;
+        font-variation-settings: 'wght' 40;
+        line-height: 4vh;
+      }
+
+      .display-T {
+        font-size: 20vh;
+        font-variation-settings: 'wght' 500;
+      }
+
+      #intro-section {
+        height: auto;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      #intro-title {
+        /* background-color: green; */
+        width: auto;
+        padding: 4vh;
+        padding-bottom: 0em;
+      }
+
+      #intro-description {
+        /* background-color: purple; */
+        width:auto;
+        padding: 4vh;
+        padding-top: 0;
+      }
+
+      #data-title {
+        /* background-color: brown; */
+        padding: 4vh;
+        width: auto;
+        line-height: 4vh;
+      }
+
+      #data-graphs {
+        /* background-color: pink; */
+        padding-top: 0.5em;
+        padding-left: 0em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 100%;
+        height: 600px;
+      }
+
+      #graph-1 {
+        /* background-color: grey; */
+        width: 40%;
+        height: auto;
+        font-family: TaubDisplayA;
+        font-size: 70vh;
+        color: #f9ac84;
+        font-variation-settings: 'wght' 300;
+      }
+
+      #graph-2 {
+        /* background-color: green; */
+        width: auto;
+        height: auto;
+        font-family: TaubDisplayC;
+        color: #f2635d;
+        font-size: 70vh;
+        font-variation-settings: 'wght' 400;
+      }
+
+      #graph-3 {
+        /* background-color: purple; */
+        width: auto;
+        height: auto;
+        font-family: TaubDisplayB;
+        font-variation-settings: 'wght' 400;
+        color: #fac8bf;
+        font-size: 70vh;
+        position: relative;
+        top: -0.1em;
+        right: 0em;
+      }
+
+      #data-stats {
+        /* background-color: green; */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        flex-flow: column;
+      }
+
+      #data-interactive {
+        /* background-color: purple; */
+        padding-left: 4vh;
+        line-height: 0.001em;
+        margin-bottom: 50px;
+      }
+
+      #data-year {
+        font-size:13vw;
+        font-variation-settings: 'wght' 80;
+        margin-bottom: 100px;
+      }
+
+      .slider {
+        -webkit-appearance: none;
+        width: 90%;
+        height: 3px;
+        background: rgba(255,255,255,0.5);
+        outline: none;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 10%;
+        height: 8px;
+        background: #ffffff;
+        cursor: pointer;
+      }
+
+      #data-mouse {
+        font-size:3vw;
+        font-variation-settings: 'wght' 50;
+        opacity:0.2;
+      }
+
+      #stat-1, #stat-2, #stat-3 {
+        /* background-color: blue; */
+        padding-left: 4vh;
+        line-height: 0.005em;
+        margin-bottom: 0.4em;
+      }
+
+      #grid-section {
+        padding: 4vh;
+        width: auto;
+        height: auto;
+      }
+
+      #grid-title {
+        margin-bottom: 50px;
+      }
+
+      #grid-container {
+        /* background-color: pink; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .grid-item {
+        width: 60px;
+        height: 60px;
+        font-family: TaubSans-Regular;
+        font-variation-settings: 'wght' 100;
+        border: 0.5px solid #263587;
+        padding: 20px;
+        font-size: 4vw;
+        display: flex;
+        justify-content: center;
+        color: #263587;
+      }
+      #anatomy-section {
+        width: 100%;
+        height: 40em;
+      }
+
+      #styles-section{
+        padding: 4vh;
+      }
+
+      #styles-title {
+        font-variation-settings: 'wght' 100;
+        font-size: 8vw;
+        line-height: 1.4em;
+        margin-bottom: 15px;
+      }
+      #styles-categories {
+        font-size: 5vw;
+        display: inline-block;
+        line-height: 1em;
+      }
+	}

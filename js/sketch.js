@@ -1,174 +1,58 @@
 // WINDOW DIMENSIONS
 var wid = window.innerWidth;
 var hei = window.innerHeight;
+var intro, dataSection;
+var anatomySection = document.getElementById("anatomy-section");
+var stylesSection = document.getElementById("styles-section");
 
-// Make Sections fullscreen
-var intro = document.getElementById('introSection');
-intro.style.width = wid + "px";
-intro.style.height = hei + "px";
-var animateSection = document.getElementById("animateSection");
+// Make Sections fullscreen on Desktop
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+  // no resizing
+} else {
+  console.log("desktop");
+  intro = document.getElementById('intro-section');
+  intro.style.width = wid + "px";
+  intro.style.height = hei + "px";
+
+  dataSection = document.getElementById("data-section");
+  dataSection.style.width = wid + "px";
+  dataSection.style.height = hei + "px";
+
+  anatomySection.style.width = wid + "px";
+  anatomySection.style.height = hei + "px";
+
+  stylesSection.style.width = wid + "px";
+  stylesSection.style.height = hei + "px";
+
+
+  window.onresize = resize;
+}
+
+var animateSection = document.getElementById("animate-section");
 animateSection.style.width = wid + "px";
 animateSection.style.height = hei + "px";
-var anatomySection = document.getElementById("AnatomySection");
-anatomySection.style.width = wid + "px";
-anatomySection.style.height = hei + "px";
-var dataSection = document.getElementById("dataSection");
-dataSection.style.width = wid + "px";
-dataSection.style.height = hei + "px";
 
-// time, date, location
-var seconds, mili;
-var today = new Date();
-var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-var thisMonth = months[today.getMonth()];
-var date = thisMonth + ' ' + today.getDate() + ', '+ today.getFullYear();
-var city = document.getElementById("time-container");
-var bigLetter = document.getElementById("Hello");
-var word = ("H I").split('');
-
-var two;
-var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ\|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
-var grid = document.getElementById("gridContainer");
-
-// Intro div fullscreen
 var taub = ("Taub").split('');
+var e = ("eeee").split('');
 
-window.onresize = resize;
-$(window).scroll(changeWeight);
+var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ\|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
+var grid = document.getElementById("grid-container");
 introducingTaub();
-scrollTaub();
-showGrid();
-showAnatomy();
 dataViz();
 
-// first section - intro
+// 1st section - intro
 function introducingTaub() {
-  for(let i = 0;i < taub.length; i++) {
-    let introTitle = document.getElementById('introTitle');
-    let left = getRandomInt(100, $("#introTitle").width());
-    let top = getRandomInt(200, $("#introTitle").width());
+  for (let i = 0 ;i < taub.length; i++) {
+    let introTitle = document.getElementById('intro-title');
     let w = document.createElement('span');
     w.textContent = taub[i];
     let id = 'I' + i;
     w.id = id;
-    w.className = "taub";
-    w.style.top = top + "px";
-    w.style.left = left + "px";
+    w.className = "sans-h1";
     introTitle.appendChild(w);
-    $("#I" + i).draggable({
-      // when user drops off word, check for its position
-      // if word is on the right of the page then turn div background colour to red
-      stop: function() {
-        //positions();
-      }
-    });
   }
 }
-
-// second section - scroll taub
-function scrollTaub(){
-  for (let i = 0 ;i < taub.length; i++) {
-    let w = document.createElement('span');
-    w.textContent = taub[i];
-    let id = 'M' + i;
-    w.id = id;
-    w.className = "properties";
-    animateSection.appendChild(w);
-  }
-}
-function changeWeight() {
-  var scrollTop= $(window).scrollTop();
-  //console.log("Scroll from Top: " + tempScrollTop.toString());
-  var value = mapped(scrollTop,0,1032,200,800);
-  for (let n=0;n<taub.length;n++){
-    let letterDiv = document.getElementById("M" + n);
-
-    if (value > 800){value = 800}
-    if (value < 200){value = 200}
-
-    letterDiv.style.fontVariationSettings = " 'wght' " + value;
-  }
-}
-
-// third section - grid
-function showGrid() {
-  // Grid Characters
-  for (let i = 0; i < characters.length; i++) {
-    let w = document.createElement('span');
-    w.textContent = characters[i];
-    w.id = 'G' + i;
-    w.className = "grid-item";
-    grid.appendChild(w);
-  }
-}
-
-// fourth section - anatomy
-function showAnatomy() {
-  two = new Two({
-    width: wid,
-    height: hei
-  }).appendTo(AnatomySection);
-
-  var w = document.getElementById("work");
-  var work = two.interpret(w);
-  let value = mapped(wid,0,2440,0.009,1.87);
-
-  var s = document.getElementById("skeleton");
-  var skeleton = two.interpret(s);
-  work.scale = value;
-  skeleton.scale = value;
-
-  var background = two.makeRectangle(two.width / 2, two.height / 2, two.width, two.height);
-  background.noStroke();
-  background.fill = "#7569A9";
-  background.name = 'background';
-
-  var container = two.makeGroup(background);
-  container.add(skeleton);
-
-  var cursor = two.makeCircle(0, 0, Math.min(two.height, two.width) / 6);
-  cursor.outline = two.makeCircle(0, 0, Math.min(two.height, two.width) / 6);
-  cursor.target = new Two.Vector();
-
-  cursor.outline.noFill();
-  cursor.outline.stroke = 'rgba(239, 223, 209, 0.7)';
-  cursor.outline.linewidth = 2;
-
-  container.mask = cursor;
-  cursor.target.set(two.width / 2, two.height / 2);
-  cursor.translation.copy(cursor.target);
-
-  var center = _.debounce(function() {
-    cursor.target.set(two.width / 2, two.height / 2);
-  }, 1000);
-
-  var drag = function(e) {
-    cursor.target.set(e.clientX, e.clientY);
-    center();
-  };
-
-  var touchDrag = function(e) {
-    e.preventDefault();
-    var touch = e.originalEvent.changedTouches[0];
-    drag({
-      clientX: touch.pageX,
-      clientY: touch.pageY
-    });
-    return false;
-  };
-
-  $(window)
-  .bind('mousemove', drag)
-  .bind('touchmove', touchDrag);
-
-  two.bind('update', function(frameCount) {
-    cursor.translation.x += (cursor.target.x - cursor.translation.x) * 0.125;
-    cursor.translation.y += (cursor.target.y - cursor.translation.y) * 0.125;
-    cursor.outline.translation.copy(cursor.translation);
-  }).play();
-}
-
-// fifth section - data visualizations
+// 2nd section - data visualizations
 function dataViz() {
   let index = document.getElementById("whatyear").value;
   let data = [
@@ -233,6 +117,101 @@ function dataViz() {
   requestAnimationFrame(dataViz);
 }
 
+var two;
+scrollTaub();
+showGrid();
+showAnatomy();
+
+// second section - scroll taub
+function scrollTaub(){
+  for (let i = 0 ;i < e.length; i++) {
+    let w = document.createElement('span');
+    w.textContent = e[i];
+    let id = 'M' + i;
+    w.id = id;
+    w.className = "display-T";
+    animateSection.appendChild(w);
+  }
+}
+// third section - grid
+function showGrid() {
+  // Grid Characters
+  for (let i = 0; i < characters.length; i++) {
+    let w = document.createElement('span');
+    w.textContent = characters[i];
+    w.id = 'G' + i;
+    w.className = "grid-item";
+    grid.appendChild(w);
+  }
+}
+// fourth section - anatomy
+function showAnatomy() {
+  two = new Two({
+    width: wid,
+    height: hei
+  }).appendTo(anatomySection);
+
+  var w = document.getElementById("work");
+  var work = two.interpret(w);
+  let value = mapped(wid,0,2440,0.009,1.87);
+
+  var s = document.getElementById("skeleton");
+  var skeleton = two.interpret(s);
+  work.scale = value;
+  skeleton.scale = value;
+
+  var background = two.makeRectangle(two.width / 2, two.height / 2, two.width, two.height);
+  background.noStroke();
+  background.fill = "#7569A9";
+  background.name = 'background';
+
+  var container = two.makeGroup(background);
+  container.add(skeleton);
+
+  var cursor = two.makeCircle(0, 0, Math.min(two.height, two.width) / 6);
+  cursor.outline = two.makeCircle(0, 0, Math.min(two.height, two.width) / 6);
+  cursor.target = new Two.Vector();
+
+  cursor.outline.noFill();
+  cursor.outline.stroke = 'rgba(239, 223, 209, 0.7)';
+  cursor.outline.linewidth = 2;
+
+  container.mask = cursor;
+  cursor.target.set(two.width / 2, two.height / 2);
+  cursor.translation.copy(cursor.target);
+
+  var center = _.debounce(function() {
+    cursor.target.set(two.width / 2, two.height / 2);
+  }, 1000);
+
+  var drag = function(e) {
+    cursor.target.set(e.clientX, e.clientY);
+    center();
+  };
+
+  var touchDrag = function(e) {
+    e.preventDefault();
+    var touch = e.originalEvent.changedTouches[0];
+    drag({
+      clientX: touch.pageX,
+      clientY: touch.pageY
+    });
+    return false;
+  };
+
+  $(window)
+  .bind('mousemove', drag)
+  .bind('touchmove', touchDrag);
+
+  two.bind('update', function(frameCount) {
+    cursor.translation.x += (cursor.target.x - cursor.translation.x) * 0.125;
+    cursor.translation.y += (cursor.target.y - cursor.translation.y) * 0.125;
+    cursor.outline.translation.copy(cursor.translation);
+  }).play();
+}
+
+
+
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -254,6 +233,9 @@ function resize() {
   // resize mouse Section
   animateSection.style.width = wid + "px";
   animateSection.style.height = hei + "px";
+
+  stylesSection.style.width = wid + "px";
+  stylesSection.style.height = hei + "px";
 
   // resize anatomy Section
   anatomySection.style.width = wid + "px";
