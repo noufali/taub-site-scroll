@@ -37,10 +37,8 @@ var e = ("data").split('');
 
 var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ\|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
 var grid = document.getElementById("grid-container");
-introducingTaub();
 
 var slider = document.getElementById("whatyear");
-
 var interval = setInterval(function() {
   slider.stepUp();
   slider.dispatchEvent(new Event('input'));
@@ -48,22 +46,7 @@ var interval = setInterval(function() {
   if (slider.value == 204) slider.value = 0;
 }, 900);
 
-//dataViz();
-
-// 1st section - intro
-function introducingTaub() {
-  for (let i = 0 ;i < taub.length; i++) {
-    let introTitle = document.getElementById('intro-title');
-    let w = document.createElement('span');
-    w.textContent = taub[i];
-    let id = 'I' + i;
-    w.id = id;
-    w.className = "sans-h1";
-    introTitle.appendChild(w);
-  }
-}
 // 2nd section - data visualizations
-
 function dataViz() {
   let index = document.getElementById("whatyear").value;
   var stats;
@@ -116,22 +99,10 @@ function dataViz() {
   //requestAnimationFrame(dataViz);
 }
 
-var two;
-scrollTaub();
+var two, skeleton, work, cursor;
 showGrid();
 showAnatomy();
 
-// second section - scroll taub
-function scrollTaub(){
-  for (let i = 0 ;i < e.length; i++) {
-    let w = document.createElement('span');
-    w.textContent = e[i];
-    let id = 'M' + i;
-    w.id = id;
-    w.className = "display-T";
-    animateSection.appendChild(w);
-  }
-}
 // third section - grid
 function showGrid() {
   // Grid Characters
@@ -151,11 +122,11 @@ function showAnatomy() {
   }).appendTo(anatomySection);
 
   var w = document.getElementById("work");
-  var work = two.interpret(w);
-  let value = mapped(wid,0,2440,0.009,1.87);
+  work = two.interpret(w);
+  let value = mapped(wid,0,2440,0.009,1.67);
 
   var s = document.getElementById("skeleton");
-  var skeleton = two.interpret(s);
+  skeleton = two.interpret(s);
   work.scale = value;
   skeleton.scale = value;
 
@@ -167,7 +138,7 @@ function showAnatomy() {
   var container = two.makeGroup(background);
   container.add(skeleton);
 
-  var cursor = two.makeCircle(0, 0, Math.min(two.height, two.width) / 6);
+  cursor = two.makeCircle(0, 0, Math.min(two.height, two.width) / 6);
   cursor.outline = two.makeCircle(0, 0, Math.min(two.height, two.width) / 6);
   cursor.target = new Two.Vector();
 
@@ -225,7 +196,6 @@ function resize() {
   //get new window dimensions
   wid = window.innerWidth;
   hei = window.innerHeight;
-  console.log(wid);
   // resize intro Section
   intro.style.width = wid + "px";
   intro.style.height = hei + "px";
@@ -240,13 +210,14 @@ function resize() {
   // resize anatomy Section
   anatomySection.style.width = wid + "px";
   anatomySection.style.height = hei + "px";
-  let factor = mapped(wid,0,2440,0.009,1.87);
-
-  skeleton.scale = factor;
-  work.scale = factor;
+  let factor = mapped(wid,0,2440,0.009,1.67);
+  console.log(skeleton.scale);
 
   two.width = wid;
   two.height = hei;
+
+  skeleton.scale = factor;
+  work.scale = factor;
 
   // resize Data Section
   dataSection.style.width = wid + "px";

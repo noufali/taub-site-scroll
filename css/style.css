@@ -94,7 +94,7 @@ a.demo--current {
 .sans-h1 {
   font-family: TaubSans;
   font-size: 18vw;
-  font-variation-settings: 'wght' 100;
+  font-variation-settings: 'wght' 80;
 }
 
 .sans-h2 {
@@ -105,13 +105,13 @@ a.demo--current {
 
 .sans-h3 {
   font-family: TaubSans;
-  font-size: 1.2vw;
+  font-size: 1.5vw;
   font-variation-settings: 'wght' 100;
 }
 
 .sans-p {
   font-family: TaubSans;
-  font-size:1.3vw;
+  font-size:1.5vw;
   font-variation-settings: 'wght' 50;
   line-height: 4vh;
 }
@@ -162,8 +162,9 @@ a.demo--current {
 }
 
 #intro-title {
-  /* background-color: green; */
-  padding: 10em;
+  background-color: green;
+  padding: 5em;
+  line-height: 0em;
 }
 
 #intro-description {
