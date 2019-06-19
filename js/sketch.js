@@ -226,6 +226,7 @@ function resize() {
   //get new window dimensions
   wid = window.innerWidth;
   hei = window.innerHeight;
+  console.log(wid);
   // resize intro Section
   intro.style.width = wid + "px";
   intro.style.height = hei + "px";
