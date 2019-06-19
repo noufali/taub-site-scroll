@@ -174,7 +174,7 @@ a.demo--current {
 }
 
 #animate-section {
-  background-color: #f2635d;
+  background-color: #121c4e;
   justify-content: center;
   align-items: center;
 }
@@ -247,14 +247,14 @@ a.demo--current {
   width: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 #data-graphs {
   /* background-color: grey; */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 70%;
   height: auto;
@@ -266,7 +266,7 @@ a.demo--current {
   display: flex;
   flex-direction: column;
   padding: 60px;
-  padding-bottom: 0px;
+  padding-bottom: 20px;
 }
 
 #graph-1-num {
@@ -283,6 +283,7 @@ a.demo--current {
   display: flex;
   flex-direction: column;
   padding-left: 60px;
+  padding-bottom: 20px;
 }
 
 #graph-2-num {
@@ -321,12 +322,13 @@ a.demo--current {
 
 #data-interactive {
   /* background-color: purple; */
-  line-height: 0.05em;
+  padding-top: 60px;
+  line-height: 0em;
 }
 
 #data-year {
   font-size:3vw;
-  font-variation-settings: 'wght' 80;
+  font-variation-settings: 'wght' 150;
   margin-bottom: 0px;
 }
 
@@ -354,7 +356,6 @@ a.demo--current {
   width: 15%;
   height: 5px;
   background: #222222;
-  cursor: pointer;
 }
 
 #styles-section{

@@ -38,7 +38,17 @@ var e = ("data").split('');
 var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ\|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
 var grid = document.getElementById("grid-container");
 introducingTaub();
-dataViz();
+
+var slider = document.getElementById("whatyear");
+
+var interval = setInterval(function() {
+  slider.stepUp();
+  slider.dispatchEvent(new Event('input'));
+  dataViz();
+  if (slider.value == 204) slider.value = 0;
+}, 900);
+
+//dataViz();
 
 // 1st section - intro
 function introducingTaub() {
@@ -103,7 +113,7 @@ function dataViz() {
     graph3.style.fontVariationSettings = " 'wght' " + servicePer;
   });
 
-  requestAnimationFrame(dataViz);
+  //requestAnimationFrame(dataViz);
 }
 
 var two;
