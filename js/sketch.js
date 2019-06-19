@@ -33,7 +33,7 @@ animateSection.style.width = wid + "px";
 animateSection.style.height = hei + "px";
 
 var taub = ("Taub").split('');
-var e = ("eeee").split('');
+var e = ("data").split('');
 
 var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ\|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
 var grid = document.getElementById("grid-container");
@@ -75,9 +75,13 @@ function dataViz() {
   $( "#data-month" ).text(dataPt.month);
   $( "#data-year" ).text(dataPt.year);
 
-  $( "#num-1" ).text(dataPt.privateTho);
-  $( "#num-2" ).text(dataPt.goodsTho);
-  $( "#num-3" ).text(dataPt.servicesTho);
+  $( "#graph-1-num" ).text(dataPt.privateTho);
+  $( "#graph-2-num" ).text(dataPt.goodsTho);
+  $( "#graph-3-num" ).text(dataPt.servicesTho);
+
+  $( "#graph-1-perc" ).text(dataPt.privatePerc);
+  $( "#graph-2-perc" ).text(dataPt.goodsPerc);
+  $( "#graph-3-perc" ).text(dataPt.servicePer);
 
   let privatePerc = mapped(dataPt.privatePerc,0.11,0.22,300,600);
   let goodsPerc = mapped(dataPt.privatePerc,0.00,0.42,300,600);
@@ -104,9 +108,9 @@ function dataViz() {
     servicePer = 300;
   };
 
-  let graph1 = document.getElementById("graph-1");
-  let graph2 = document.getElementById("graph-2");
-  let graph3 = document.getElementById("graph-3");
+  let graph1 = document.getElementById("graph-1-num");
+  let graph2 = document.getElementById("graph-2-num");
+  let graph3 = document.getElementById("graph-3-num");
 
   graph1.style.fontVariationSettings = " 'wght' " + privatePerc;
   //console.log(privatePerc);

@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head></head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.6.0/two.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <body>
@@ -36,20 +34,53 @@
   <div class="sections sans-h1" id="data-section">
     <div id="data-title">
       <div>
-        <h1 class="sans-h3">Data-driven</h1>
+        <h1 class="sans-h2">Data-driven</h1>
+        <div id="data-description" class="sans-p">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </div>
       </div>
-      <div id="data-description" class="sans-p">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+      <div id="data-interactive">
+        <p id="data-month" class="sans-h2">April</p>
+        <p id="data-year">2019</p>
+        <input type="range" min="0" max="12" value="12" class="slider" id="whatyear">
+        <p id="data-mouse">Mouse over to change year</p>
       </div>
     </div>
 
     <div id="data-graphs">
-      <span id="graph-1">•</span>
-      <span id="graph-2">•</span>
-      <span id="graph-3">•</span>
+      <div id="graph-1">
+        <p id="graph-1-title" class="sans-h3">
+          <span>Total Private Sector Employment</span>
+          <span id="graph-1-perc">-1.2</span>
+          <br>
+          <br>
+          <span id="graph-1-num">5</span>
+        </p>
+      </div>
+
+      <div id="graph-2">
+        <p id="graph-2-title" class="sans-h3">
+          <span>By Goods-producing Sector</span>
+          <span id="graph-2-perc">-0.03</span>
+          <br>
+          <br>
+          <span id="graph-2-num">4</span>
+        </p>
+      </div>
+
+      <div id="graph-3">
+        <p id="graph-3-title" class="sans-h3">
+          <span>By Service-producing Factor</span>
+          <span id="graph-3-perc">+0.42</span>
+          <br>
+          <br>
+          <span id="graph-3-num">4</span>
+        </p>
+      </div>
     </div>
 
-    <div id="data-stats">
+    <!-- <div id="data-stats">
       <div id="data-interactive">
         <p id="data-month" class="sans-h2">April</p>
         <p id="data-year">2019</p>
@@ -73,7 +104,7 @@
           <p class="sans-h2" id="num-3" style="color:#fac8bf">107,622</p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- INTERACTIVE TEXT -->
