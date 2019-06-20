@@ -162,7 +162,7 @@ a.demo--current {
 }
 
 #intro-title {
-  background-color: green;
+  /* background-color: green; */
   padding: 5em;
   line-height: 0em;
 }
@@ -392,29 +392,26 @@ a.demo--current {
 
       .sans-h1 {
         font-family: TaubSans;
-        font-size: 13vh;
+        font-size: 15vh;
         font-variation-settings: 'wght' 130;
-        line-height: 1.4em;
       }
 
       .sans-h2 {
         font-family: TaubSans;
         font-size: 8vw;
         font-variation-settings: 'wght' 50;
-        line-height: 1.4em;
       }
 
       .sans-h3 {
         font-family: TaubSans;
-        font-size: 3vw;
+        font-size: 7vw;
         font-variation-settings: 'wght' 100;
       }
 
       .sans-p {
         font-family: TaubSans;
-        font-size:5vw;
+        font-size:7vw;
         font-variation-settings: 'wght' 40;
-        line-height: 4vh;
       }
 
       .display-T {
@@ -430,46 +427,60 @@ a.demo--current {
 
       #intro-title {
         /* background-color: green; */
-        width: auto;
+        width: 100%;
         padding: 4vh;
         padding-bottom: 0em;
+        line-height: 2em;
       }
 
       #intro-description {
         /* background-color: purple; */
         width:auto;
         padding: 4vh;
-        padding-top: 0;
+        padding-top: 0px;
+        line-height: 1.5em;
       }
 
       #data-title {
-        /* background-color: brown; */
         padding: 4vh;
         width: auto;
-        line-height: 4vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
       }
 
+      #data-description {
+        line-height: 1.5em;
+      }
       #data-graphs {
-        /* background-color: pink; */
-        padding-top: 0.5em;
-        padding-left: 0em;
+        /* background-color: grey; */
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
         flex-wrap: wrap;
+        justify-content: flex-start;
         align-items: flex-start;
-        align-content: flex-start;
         width: 100%;
-        height: 600px;
+        height: auto;
       }
 
       #graph-1 {
-        /* background-color: grey; */
-        width: 40%;
-        height: auto;
+        /* background-color: brown; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 4vh;
+        padding-bottom: 10px;
+      }
+
+      #graph-1-title, #graph-2-title, #graph-3-title  {
+        font-size: 3vh;
+        font-variation-settings: 'wght' 80;
+      }
+
+      #graph-1-num {
+        /* background-color: pink; */
         font-family: TaubDisplayA;
-        font-size: 70vh;
+        font-size: 8vh;
         color: #f9ac84;
         font-variation-settings: 'wght' 300;
       }
@@ -477,77 +488,45 @@ a.demo--current {
       #graph-2 {
         /* background-color: green; */
         width: auto;
-        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding-left: 4vh;
+        padding-bottom: 10px;
+      }
+
+      #graph-2-num {
         font-family: TaubDisplayC;
         color: #f2635d;
-        font-size: 70vh;
+        font-size: 10vh;
         font-variation-settings: 'wght' 400;
       }
 
       #graph-3 {
         /* background-color: purple; */
-        width: auto;
-        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 4vh;
+        padding-bottom: 4vh;
+      }
+
+      #graph-3-num {
         font-family: TaubDisplayB;
         font-variation-settings: 'wght' 400;
         color: #fac8bf;
-        font-size: 70vh;
-        position: relative;
-        top: -0.1em;
-        right: 0em;
-      }
-
-      #data-stats {
-        /* background-color: green; */
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        flex-flow: column;
+        font-size: 10vh;
       }
 
       #data-interactive {
         /* background-color: purple; */
-        padding-left: 4vh;
-        line-height: 0.001em;
-        margin-bottom: 50px;
+        padding-top: 60px;
+        line-height: 0em;
       }
 
       #data-year {
-        font-size:13vw;
-        font-variation-settings: 'wght' 80;
-        margin-bottom: 100px;
-      }
-
-      .slider {
-        -webkit-appearance: none;
-        width: 90%;
-        height: 3px;
-        background: rgba(255,255,255,0.5);
-        outline: none;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
-      }
-
-      .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 10%;
-        height: 8px;
-        background: #ffffff;
-        cursor: pointer;
-      }
-
-      #data-mouse {
-        font-size:3vw;
-        font-variation-settings: 'wght' 50;
-        opacity:0.2;
-      }
-
-      #stat-1, #stat-2, #stat-3 {
-        /* background-color: blue; */
-        padding-left: 4vh;
-        line-height: 0.005em;
-        margin-bottom: 0.4em;
+        font-size:9vw;
+        font-variation-settings: 'wght' 150;
+        line-height: 0.5em;
       }
 
       #grid-section {
