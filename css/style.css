@@ -1,332 +1,410 @@
 @font-face {
-  font-family: TaubSans-Regular;
-  src: url('fonts/TaubSans-Regular.woff2') format('woff2');
+font-family: TaubSans-Light;
+src: url('fonts/TaubSans-Light.woff') format('woff2');
 }
 @font-face {
-  font-family: TaubSans;
-  src: url('fonts/Taub_Nouf.ttf');
+font-family: TaubSans-Light-Italic;
+src: url('fonts/TaubSans-LightItalic.woff2') format('woff2');
 }
 @font-face {
-  font-family: Taubjs;
+font-family: TaubSans-Regular;
+src: url('fonts/TaubSans-Regular.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Regular-Italic;
+src: url('fonts/TaubSans-RegularItalic.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Medium;
+src: url('fonts/TaubSans-Medium.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Medium-Italic;
+src: url('fonts/TaubSans-MediumItalic.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Bold;
+src: url('fonts/TaubSans-Bold.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Bold-Italic;
+src: url('fonts/TaubSans-BoldItalic.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Heavy;
+src: url('fonts/TaubSans-Heavy.woff') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Heavy-Italic;
+src: url('fonts/TaubSans-HeavyItalic.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Super;
+src: url('fonts/TaubSans-Super.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans-Super-Italic;
+src: url('fonts/TaubSans-SuperItalic.woff2') format('woff2');
+}
+@font-face {
+font-family: TaubSans;
+src: url('fonts/Taub_Nouf.ttf');
+}
+@font-face {
+font-family: Taubjs;
+font-variation-settings: 'wght' 0;
+src: url('fonts/Taub_Nouf.ttf');
+}
+@font-face {
+font-family: TaubDisplayA;
+src: url('fonts/TaubDisplay-A.ttf') format('truetype');
+}
+@font-face {
+font-family: TaubDisplayB;
+src: url('fonts/TaubDisplay-B.ttf') format('truetype');
+}
+@font-face {
+font-family: TaubDisplayC;
+src: url('fonts/TaubDisplay-C.ttf') format('truetype');
+}
+
+body {
+margin: 0px;
+padding: 0px;
+}
+
+.sections {
+display: flex;
+flex-direction: row;
+}
+
+.sans-h1 {
+font-family: TaubSans;
+font-size: 18vw;
+font-variation-settings: 'wght' 80;
+}
+
+.sans-h2 {
+font-family: TaubSans;
+font-size: 1.8vw;
+font-variation-settings: 'wght' 90;
+}
+
+.sans-h3 {
+font-family: TaubSans;
+font-size: 1.5vw;
+font-variation-settings: 'wght' 100;
+}
+
+.sans-p {
+font-family: TaubSans;
+font-size:1.5vw;
+font-variation-settings: 'wght' 50;
+line-height: 4vh;
+}
+
+.display-T {
+font-family: TaubDisplayA;
+font-size: 55vh;
+font-variation-settings: 'wght' 500;
+color: #efdfd1;
+cursor: default;
+}
+
+@keyframes weight {
+0% {
+  transform: scale(0.1);
+  opacity: 0;
   font-variation-settings: 'wght' 0;
-  src: url('fonts/Taub_Nouf.ttf');
 }
-@font-face {
-  font-family: TaubDisplayA;
-  src: url('fonts/TaubDisplay-A.ttf') format('truetype');
+60% {
+  transform: scale(1.2);
+  opacity: 1;
+  font-variation-settings: 'wght' 600;
 }
-@font-face {
-  font-family: TaubDisplayB;
-  src: url('fonts/TaubDisplay-B.ttf') format('truetype');
+100% {
+  transform: scale(1);
+  font-variation-settings: 'wght' 1000;
 }
-@font-face {
-  font-family: TaubDisplayC;
-  src: url('fonts/TaubDisplay-C.ttf') format('truetype');
 }
 
-  body {
-    margin: 0px;
-    padding: 0px;
-  }
-
-  .sections {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .sans-h1 {
-    font-family: TaubSans;
-    font-size: 18vw;
-    font-variation-settings: 'wght' 80;
-  }
-
-  .sans-h2 {
-    font-family: TaubSans;
-    font-size: 1.8vw;
-    font-variation-settings: 'wght' 90;
-  }
-
-  .sans-h3 {
-    font-family: TaubSans;
-    font-size: 1.5vw;
-    font-variation-settings: 'wght' 100;
-  }
-
-  .sans-p {
-    font-family: TaubSans;
-    font-size:1.5vw;
-    font-variation-settings: 'wght' 50;
-    line-height: 4vh;
-  }
-
-  .display-T {
-    font-family: TaubDisplayA;
-    font-size: 55vh;
-    font-variation-settings: 'wght' 500;
-    color: #efdfd1;
-    cursor: default;
-  }
-
-  @keyframes weight {
-    0% {
-      transform: scale(0.1);
-      opacity: 0;
-      font-variation-settings: 'wght' 0;
-    }
-    60% {
-      transform: scale(1.2);
-      opacity: 1;
-      font-variation-settings: 'wght' 600;
-    }
-    100% {
-      transform: scale(1);
-      font-variation-settings: 'wght' 1000;
-    }
-  }
-
-  #intro-section {
-    background-color: #f2635d;
-    color: #efdfd1;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #intro-title {
-    /* background-color: green; */
-    padding: 5em;
-    line-height: 0em;
-  }
-
-  #intro-description {
-    /* background-color: purple; */
-    padding: 3em;
-    padding-left: 0em;
-    width:auto;
-  }
-
-  #animate-section {
-    background-color: #121c4e;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #grid-section {
-    background-color: #F2CAC1;
-    flex-direction: column;
-  }
-
-  #grid-title {
-    color: #263587;
-    display: flex;
-    justify-content: center;
-    padding: 60px;
-  }
-
-  #grid-container {
-    /* background-color: pink; */
-    padding: 35vh;
-    padding-top: 0;
-    padding-bottom: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .grid-item {
-    width: 3%;
-    height: 3%;
-    font-family: TaubSans-Regular;
-    font-variation-settings: 'wght' 100;
-    border: 0.5px solid #263587;
-    padding: 15px;
-    font-size: 1.8em;
-    display: flex;
-    justify-content: center;
-    color: #263587;
-  }
-
-  #anatomy-section {
-    background-color: #7569A9;
-    flex-direction: column;
-    cursor: crosshair;
-  }
-
-  #anatomy-description {
-    color: #efdfd1;
-    padding-left: 60px;
-    padding-top: 60px;
-    width: 30%;
-    /* background-color: pink; */
-  }
-
-  #skeleton, #work, #anatomy-pic {
-    visibility: hidden;
-    width:0%;
-  }
-
-  #anatomy-description {
-    display: none;
-  }
-
-  #letter-grid {
-    padding: 10vh;
-    margin-right: 1vh;
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  #data-section {
-    background-color: #ffffff;
-  }
-
-  #data-title {
-    /* background-color: grey; */
-    padding: 60px;
-    color: #222222;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  #data-graphs {
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    width: 70%;
-    height: auto;
-  }
-
-  #graph-1 {
-    /* background-color: brown; */
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 60px;
-    padding-bottom: 20px;
-  }
-
-  #graph-1-num {
-    /* background-color: pink; */
-    font-family: TaubDisplayA;
-    font-size: 15vh;
-    color: #f9ac84;
-    font-variation-settings: 'wght' 300;
-  }
-
-  #graph-2 {
-    /* background-color: green; */
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    padding-left: 60px;
-    padding-bottom: 20px;
-  }
-
-  #graph-2-num {
-    /* background-color: yellow; */
-    font-family: TaubDisplayC;
-    color: #f2635d;
-    font-size: 15vh;
-    font-variation-settings: 'wght' 400;
-  }
-
-  #graph-3 {
-    /* background-color: purple; */
-    width: auto
-    display: flex;
-    flex-direction: column;
-    padding-left: 60px;
-    padding-bottom: 60px;
-  }
-
-  #graph-3-num {
-    /* background-color: orange; */
-    font-family: TaubDisplayB;
-    font-variation-settings: 'wght' 400;
-    color: #fac8bf;
-    font-size: 15vh;
-  }
-
-  #data-stats {
-    /* background-color: purple; */
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-right: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-flow: column-reverse;
-    justify-content: space-between;
-  }
-
-  #data-interactive {
-    /* background-color: purple; */
-    padding-top: 60px;
-    line-height: 0em;
-  }
-
-  #data-year {
-    font-size:3vw;
-    font-variation-settings: 'wght' 150;
-    margin-bottom: 0px;
-  }
-
-  .slider {
-    -webkit-appearance: none;
-    width: 70%;
-    height: 2px;
-    background: rgba(0,0,0,0.5);
-    outline: none;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15%;
-    height: 5px;
-    background: #222222;
-  }
-
-  #styles-section {
-    background-color: #efdfd1;
-    color: #263587;
-    padding: 60px;
-  }
-  #styles-title {
-    /* background-color: pink; */
-    font-family: TaubSans;
-    font-variation-settings: 'wght' 100;
-    font-size: 4vw;
-    line-height: 1.4em;
-    padding-right: 5em;
-  }
-  #styles-categories {
-    /* background-color: grey; */
-    font-family: TaubSans;
-    font-size: 2.5vw;
-    line-height: 0.5em;
-  }
+#intro-section {
+background-color: #f2635d;
+color: #efdfd1;
+justify-content: center;
+align-items: center;
 }
+
+#intro-title {
+/* background-color: green; */
+padding: 5em;
+line-height: 0em;
+}
+
+#intro-description {
+/* background-color: purple; */
+padding: 3em;
+padding-left: 0em;
+width:auto;
+}
+
+#animate-section {
+background-color: #121c4e;
+justify-content: center;
+align-items: center;
+}
+
+#grid-section {
+background-color: #F2CAC1;
+flex-direction: column;
+}
+
+#grid-title {
+color: #263587;
+display: flex;
+justify-content: center;
+padding: 60px;
+}
+
+#grid-container {
+/* background-color: pink; */
+padding: 35vh;
+padding-top: 0;
+padding-bottom: 60px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: flex-start;
+}
+
+.grid-item {
+width: 3%;
+height: 3%;
+font-family: TaubSans-Regular;
+font-variation-settings: 'wght' 100;
+border: 0.5px solid #263587;
+padding: 15px;
+font-size: 1.8em;
+display: flex;
+justify-content: center;
+color: #263587;
+}
+
+#anatomy-section {
+background-color: #7569A9;
+flex-direction: column;
+cursor: crosshair;
+}
+
+#anatomy-description {
+color: #efdfd1;
+padding-left: 60px;
+padding-top: 60px;
+width: 30%;
+/* background-color: pink; */
+}
+
+#skeleton, #work, #anatomy-pic {
+visibility: hidden;
+width:0%;
+}
+
+#anatomy-description {
+display: none;
+}
+
+#letter-grid {
+padding: 10vh;
+margin-right: 1vh;
+width: auto;
+height: auto;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+#data-section {
+background-color: #ffffff;
+}
+
+#data-title {
+/* background-color: grey; */
+padding: 60px;
+color: #222222;
+width: 30%;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
+#data-graphs {
+/* background-color: blue; */
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: flex-start;
+width: 70%;
+height: auto;
+}
+
+#graph-1 {
+/* background-color: brown; */
+width: auto;
+display: flex;
+flex-direction: column;
+padding: 60px;
+padding-bottom: 20px;
+}
+
+#graph-1-num {
+/* background-color: pink; */
+font-family: TaubDisplayA;
+font-size: 15vh;
+color: #f9ac84;
+font-variation-settings: 'wght' 300;
+}
+
+#graph-2 {
+/* background-color: green; */
+width: auto;
+display: flex;
+flex-direction: column;
+padding-left: 60px;
+padding-bottom: 20px;
+}
+
+#graph-2-num {
+/* background-color: yellow; */
+font-family: TaubDisplayC;
+color: #f2635d;
+font-size: 15vh;
+font-variation-settings: 'wght' 400;
+}
+
+#graph-3 {
+/* background-color: purple; */
+width: auto
+display: flex;
+flex-direction: column;
+padding-left: 60px;
+padding-bottom: 60px;
+}
+
+#graph-3-num {
+/* background-color: orange; */
+font-family: TaubDisplayB;
+font-variation-settings: 'wght' 400;
+color: #fac8bf;
+font-size: 15vh;
+}
+
+#data-stats {
+/* background-color: purple; */
+padding-top: 60px;
+padding-bottom: 60px;
+padding-right: 10px;
+display: flex;
+flex-direction: column;
+flex-flow: column-reverse;
+justify-content: space-between;
+}
+
+#data-interactive {
+/* background-color: purple; */
+padding-top: 60px;
+line-height: 0em;
+}
+
+#data-year {
+font-size:3vw;
+font-variation-settings: 'wght' 150;
+margin-bottom: 0px;
+}
+
+.slider {
+-webkit-appearance: none;
+width: 70%;
+height: 2px;
+background: rgba(0,0,0,0.5);
+outline: none;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 15%;
+height: 5px;
+background: #222222;
+}
+
+#styles-section {
+background-color: #efdfd1;
+color: #263587;
+padding: 60px;
+}
+#styles-title {
+/* background-color: pink; */
+font-family: TaubSans;
+font-variation-settings: 'wght' 100;
+font-size: 4vw;
+line-height: 1.4em;
+padding-right: 5em;
+}
+#styles-categories {
+/* background-color: grey; */
+font-family: TaubSans;
+font-size: 2.5vw;
+line-height: 0.5em;
+}
+
+#styles-1 {
+  font-family: TaubSans-Light;
+}
+#styles-2 {
+  font-family: TaubSans-Light-Italic;
+}
+#styles-3 {
+  font-family: TaubSans-Regular;
+}
+#styles-4 {
+  font-family: TaubSans-Regular-Italic;
+}
+#styles-5 {
+  font-family: TaubSans-Medium;
+}
+#styles-6 {
+  font-family: TaubSans-Medium-Italic;
+}
+#styles-7 {
+  font-family: TaubSans-Bold;
+}
+#styles-8 {
+  font-family: TaubSans-Bold-Italic;
+}
+#styles-9 {
+  font-family: TaubSans-Heavy;
+}
+#styles-10 {
+  font-family: TaubSans-Heavy-Italic;
+}
+#styles-11 {
+  font-family: TaubSans-Super;
+}
+#styles-12 {
+  font-family: TaubSans-Super-Italic;
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-
+@media (min-width: 576px) {}
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-}
+@media (min-width: 992px) {}
 
 /* Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .sections {
     display: flex;
     flex-direction: column;
