@@ -220,6 +220,16 @@ a.demo--current {
 
 #anatomy-section {
   background-color: #7569A9;
+  flex-direction: column;
+  cursor: crosshair;
+}
+
+#anatomy-description {
+  color: #efdfd1;
+  padding-left: 60px;
+  padding-top: 60px;
+  width: 30%;
+  /* background-color: pink; */
 }
 
 #skeleton, #work {
@@ -385,6 +395,9 @@ a.demo--current {
 	  and (min-device-width: 375px)
 	  and (max-device-width: 812px)
 	  and (-webkit-min-device-pixel-ratio: 3) {
+      body,html {
+        overflow-x: hidden;
+      }
       .sections {
         display: flex;
         flex-direction: column;

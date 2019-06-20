@@ -2,7 +2,7 @@
 var wid = window.innerWidth;
 var hei = window.innerHeight;
 // SECTIONS
-var intro = intro = document.getElementById('intro-section');
+var intro = document.getElementById('intro-section');
 var dataSection = document.getElementById("data-section");
 var anatomySection = document.getElementById("anatomy-section");
 var stylesSection = document.getElementById("styles-section");
@@ -113,6 +113,14 @@ function showAnatomy() {
     width: wid,
     height: hei
   }).appendTo(anatomySection);
+
+  var message = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.";
+  var text = new Two.Text(message, 100, 100, {
+    alignment: 'left'
+  });
+  text.size = 20;
+  text.fill = "#efdfd1";
+  // text.family = "TaubSans";
 
   var w = document.getElementById("work");
   work = two.interpret(w);
