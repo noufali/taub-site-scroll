@@ -39,57 +39,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
-}
-
-a {
-  font-family: TaubSans;
-  font-variation-settings: 'wght' 100;
-  font-size: 2vh;
-  text-decoration: none;
-  color: var(--color-link);
-  outline: none;
-}
-a:hover,
-a:focus {
-  color: var(--color-link-hover);
-}
-
-/* Color schemes */
-.demo-magneto {
-  --color-text: #41353d;
-  --color-background: #F2CAC1;
-  --color-link: #000;
-  --color-link-hover: #41353d;
-}
-.demos {
-  position: fixed;
-  width: 100%;
-  height: 5%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  background-color: #efdfd1;
-  color: #efdfd1;
-  padding: 10px;
-  /* transform: translate(-50%, -90%); */
-  top: -100px;
-  z-index: 3;
-}
-.demo {
-  margin: 0 3em;
-}
-a.demo--current {
-  /* text-decoration: underline; */
-  color: #efdfd199;
-  /* background-color: #D6D3CC; */
-  /* pointer-events: none; */
-}
-.demo span {
-  text-transform: lowercase;
-  font-weight: bold;
-  pointer-events: none;
-  white-space: nowrap;
+  /* overflow-x: hidden; */
 }
 
 .sections {
@@ -147,18 +97,6 @@ a.demo--current {
   }
 }
 
-@keyframes weight2 {
-  0% {
-    font-variation-settings: 'wght' 0;
-  }
-  60% {
-    font-variation-settings: 'wght' 600;
-  }
-  100% {
-    font-variation-settings: 'wght' 0;
-  }
-}
-
 #intro-section {
   background-color: #f2635d;
   color: #efdfd1;
@@ -187,19 +125,21 @@ a.demo--current {
 
 #grid-section {
   background-color: #F2CAC1;
-  padding: 60px;
   flex-direction: column;
-  width: auto;
-  height: auto;
 }
 
 #grid-title {
   color: #263587;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 60px;
 }
 
 #grid-container {
   /* background-color: pink; */
+  padding: 35vh;
+  padding-top: 0;
+  padding-bottom: 60px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -207,8 +147,8 @@ a.demo--current {
 }
 
 .grid-item {
-  width: 30px;
-  height: 30px;
+  width: 3%;
+  height: 3%;
   font-family: TaubSans-Regular;
   font-variation-settings: 'wght' 100;
   border: 0.5px solid #263587;
@@ -217,10 +157,6 @@ a.demo--current {
   display: flex;
   justify-content: center;
   color: #263587;
-}
-
-.grid-item:hover {
-  cursor: pointer;
 }
 
 #anatomy-section {
@@ -237,10 +173,13 @@ a.demo--current {
   /* background-color: pink; */
 }
 
-#skeleton, #work {
+#skeleton, #work, #anatomy-pic {
   visibility: hidden;
-  /* position: absolute; */
   width:0%;
+}
+
+#anatomy-description {
+  display: none;
 }
 
 #letter-grid {
@@ -258,6 +197,7 @@ a.demo--current {
 }
 
 #data-title {
+  /* background-color: grey; */
   padding: 60px;
   color: #222222;
   width: 30%;
@@ -266,7 +206,7 @@ a.demo--current {
   justify-content: flex-start;
 }
 #data-graphs {
-  /* background-color: grey; */
+  /* background-color: blue; */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -278,7 +218,7 @@ a.demo--current {
 
 #graph-1 {
   /* background-color: brown; */
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   padding: 60px;
@@ -295,7 +235,7 @@ a.demo--current {
 
 #graph-2 {
   /* background-color: green; */
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   padding-left: 60px;
@@ -303,6 +243,7 @@ a.demo--current {
 }
 
 #graph-2-num {
+  /* background-color: yellow; */
   font-family: TaubDisplayC;
   color: #f2635d;
   font-size: 15vh;
@@ -311,7 +252,7 @@ a.demo--current {
 
 #graph-3 {
   /* background-color: purple; */
-  width: 100%;
+  width: auto
   display: flex;
   flex-direction: column;
   padding-left: 60px;
@@ -319,6 +260,7 @@ a.demo--current {
 }
 
 #graph-3-num {
+  /* background-color: orange; */
   font-family: TaubDisplayB;
   font-variation-settings: 'wght' 400;
   color: #fac8bf;
@@ -348,14 +290,6 @@ a.demo--current {
   margin-bottom: 0px;
 }
 
-#data-mouse {
-  font-size:1.3vw;
-  font-variation-settings: 'wght' 50;
-  color: #222222;
-  opacity:0.5;
-
-}
-
 .slider {
   -webkit-appearance: none;
   width: 70%;
@@ -380,6 +314,7 @@ a.demo--current {
   padding: 60px;
 }
 #styles-title {
+  /* background-color: pink; */
   font-family: TaubSans;
   font-variation-settings: 'wght' 100;
   font-size: 4vw;
@@ -387,11 +322,11 @@ a.demo--current {
   padding-right: 5em;
 }
 #styles-categories {
+  /* background-color: grey; */
   font-family: TaubSans;
   font-size: 2.5vw;
   line-height: 0.5em;
 }
-
 
 	/* ----------- iPhone X ----------- */
 
@@ -400,9 +335,6 @@ a.demo--current {
 	  and (min-device-width: 375px)
 	  and (max-device-width: 812px)
 	  and (-webkit-min-device-pixel-ratio: 3) {
-      body,html {
-        overflow-x: hidden;
-      }
       .sections {
         display: flex;
         flex-direction: column;
@@ -460,6 +392,7 @@ a.demo--current {
       }
 
       #data-title {
+        /* background-color: grey; */
         padding: 4vh;
         width: auto;
         display: flex;
@@ -468,10 +401,11 @@ a.demo--current {
       }
 
       #data-description {
+        /* background-color: pink; */
         line-height: 1.5em;
       }
       #data-graphs {
-        /* background-color: grey; */
+        /* background-color: brown; */
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -482,7 +416,7 @@ a.demo--current {
       }
 
       #graph-1 {
-        /* background-color: brown; */
+        /* background-color: yellow; */
         width: auto;
         display: flex;
         flex-direction: column;
@@ -491,6 +425,8 @@ a.demo--current {
       }
 
       #graph-1-title, #graph-2-title, #graph-3-title  {
+        /* background-color: red; */
+        width: auto;
         font-size: 2.5vh;
         font-variation-settings: 'wght' 100;
       }
@@ -513,6 +449,7 @@ a.demo--current {
       }
 
       #graph-2-num {
+        /* background-color: lightblue; */
         font-family: TaubDisplayC;
         color: #f2635d;
         font-size: 8vh;
@@ -521,7 +458,7 @@ a.demo--current {
 
       #graph-3 {
         /* background-color: purple; */
-        width: 100%;
+        width: auto;
         display: flex;
         flex-direction: column;
         padding-left: 4vh;
@@ -529,6 +466,7 @@ a.demo--current {
       }
 
       #graph-3-num {
+        /* background-color: orange; */
         font-family: TaubDisplayB;
         font-variation-settings: 'wght' 400;
         color: #fac8bf;
@@ -536,27 +474,30 @@ a.demo--current {
       }
 
       #data-year {
+        /* background-color: red; */
         font-size:9vw;
         font-variation-settings: 'wght' 150;
         line-height: 0.5em;
       }
+
 
       #animate-section {
         padding: 4vh;
       }
 
       #grid-section {
-        padding: 4vh;
         width: auto;
         height: auto;
       }
 
       #grid-title {
-        margin-bottom: 30px;
+        padding: 4vh;
       }
 
       #grid-container {
         /* background-color: pink; */
+        padding: 4vh;
+        padding-top: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -564,8 +505,8 @@ a.demo--current {
       }
 
       .grid-item {
-        width: 20px;
-        height: 20px;
+        width: 3%;
+        height: 3%;
         font-family: TaubSans-Regular;
         font-variation-settings: 'wght' 150;
         border: 0.5px solid #263587;
@@ -576,8 +517,20 @@ a.demo--current {
         color: #263587;
       }
       #anatomy-section {
-        width: 100%;
-        height: 40em;
+        width: auto;
+        height: auto;
+      }
+
+      #anatomy-pic {
+        visibility: visible;
+        width:100%;
+        height: auto;
+      }
+
+      #anatomy-description {
+        /* background-color: yellow; */
+        width: auto;
+        display: block !important;
       }
 
       #styles-section{

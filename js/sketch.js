@@ -7,10 +7,11 @@ var dataSection = document.getElementById("data-section");
 var anatomySection = document.getElementById("anatomy-section");
 var stylesSection = document.getElementById("styles-section");
 var animateSection = document.getElementById("animate-section");
+var gridSection = document.getElementById("grid-section");
 var grid = document.getElementById("grid-container");
 var slider = document.getElementById("whatyear");
-var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ\|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
-var two, skeleton, work, cursor;
+var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ@|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
+var two, skeleton, work, cursor, anatomyText;
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
   console.log("mobile");
@@ -26,11 +27,11 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
   anatomySection.style.width = wid + "px";
   anatomySection.style.height = hei + "px";
 
-  stylesSection.style.width = wid + "px";
   stylesSection.style.height = hei + "px";
 
   animateSection.style.width = wid + "px";
   animateSection.style.height = hei + "px";
+
   showAnatomy();
 
   window.onresize = resize;
@@ -115,15 +116,13 @@ function showAnatomy() {
   }).appendTo(anatomySection);
 
   var message = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.";
-  var text = two.makeText(message, 72, 100, {
+  anatomyText = two.makeText(message, 72, two.height/7, {
     alignment: 'left'
   });
-  text.size = 20;
-  text.fill = "#efdfd1";
-  text.family = "Taubjs";
-  text.fontVariationSettings = "'wght' 0";
-  console.log(text)
-  //var circle = two.makeCircle(72, 100, 50);
+  let textFactor = mapped(wid,0,2440,10,30);
+  anatomyText.size = textFactor;
+  anatomyText.fill = "#efdfd1";
+  anatomyText.family = "TaubSans-Regular";
 
   var w = document.getElementById("work");
   work = two.interpret(w);
@@ -188,8 +187,9 @@ $(document).ready(function(){
   $(window).scroll(function(){
     var scrollTop = $(document).scrollTop();
     var divTop = $("#animate-section").offset().top;
+    var divMin = divTop - ( $("#animate-section").offset().top / 2 );
     var divBottom = divTop + $("#animate-section").height();
-    if (scrollTop >= divTop && scrollTop < divBottom) {
+    if (scrollTop >= divMin && scrollTop < divBottom) {
       console.log("added");
       $(".display-T").css("animation", "weight 4s infinite");
     } else {
@@ -198,10 +198,7 @@ $(document).ready(function(){
       // $('.display-T').removeAttr('animation');
     }
   })
-})
-function scrollAnimation() {
-  $
-}
+});
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -216,30 +213,37 @@ function resize() {
   //get new window dimensions
   wid = window.innerWidth;
   hei = window.innerHeight;
+
   // resize intro Section
   intro.style.width = wid + "px";
   intro.style.height = hei + "px";
 
-  // resize mouse Section
+  // resize Data Section
+  dataSection.style.width = wid + "px";
+  dataSection.style.height = hei + "px";
+
+  // resize animation section
   animateSection.style.width = wid + "px";
   animateSection.style.height = hei + "px";
-
-  stylesSection.style.width = wid + "px";
-  stylesSection.style.height = hei + "px";
 
   // resize anatomy Section
   anatomySection.style.width = wid + "px";
   anatomySection.style.height = hei + "px";
   let factor = mapped(wid,0,2440,0.009,1.67);
-  console.log(skeleton.scale);
 
   two.width = wid;
   two.height = hei;
 
+  cursor.target.set(two.width / 2, two.height / 2);
+  //cursor.translation.copy(cursor.target);
+
   skeleton.scale = factor;
   work.scale = factor;
 
-  // resize Data Section
-  dataSection.style.width = wid + "px";
-  dataSection.style.height = hei + "px";
+
+  let textFactor = mapped(wid,0,2440,10,30);
+  anatomyText.size = textFactor;
+
+  // resize Styles Section
+  stylesSection.style.height = hei + "px";
 }
