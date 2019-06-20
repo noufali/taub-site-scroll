@@ -518,7 +518,7 @@ a.demo--current {
       }
 
       #data-year {
-        font-size:9vw;
+        font-size:15vw;
         font-variation-settings: 'wght' 150;
         line-height: 0.5em;
       }
@@ -534,7 +534,7 @@ a.demo--current {
       }
 
       #grid-title {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
 
       #grid-container {
@@ -546,13 +546,13 @@ a.demo--current {
       }
 
       .grid-item {
-        width: 60px;
-        height: 60px;
+        width: 20px;
+        height: 20px;
         font-family: TaubSans-Regular;
-        font-variation-settings: 'wght' 100;
+        font-variation-settings: 'wght' 150;
         border: 0.5px solid #263587;
         padding: 20px;
-        font-size: 4vw;
+        font-size: 6vw;
         display: flex;
         justify-content: center;
         color: #263587;
