@@ -393,7 +393,7 @@ a.demo--current {
       .sans-h1 {
         font-family: TaubSans;
         font-size: 15vh;
-        font-variation-settings: 'wght' 130;
+        font-variation-settings: 'wght' 80;
       }
 
       .sans-h2 {
@@ -404,13 +404,13 @@ a.demo--current {
 
       .sans-h3 {
         font-family: TaubSans;
-        font-size: 7vw;
+        font-size: 6vw;
         font-variation-settings: 'wght' 100;
       }
 
       .sans-p {
         font-family: TaubSans;
-        font-size:7vw;
+        font-size:6vw;
         font-variation-settings: 'wght' 40;
       }
 
@@ -427,10 +427,10 @@ a.demo--current {
 
       #intro-title {
         /* background-color: green; */
-        width: 100%;
+        width: auto;
         padding: 4vh;
         padding-bottom: 0em;
-        line-height: 2em;
+        line-height: 0em;
       }
 
       #intro-description {
@@ -459,13 +459,13 @@ a.demo--current {
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: flex-start;
-        width: 100%;
+        width: auto;
         height: auto;
       }
 
       #graph-1 {
         /* background-color: brown; */
-        width: 100%;
+        width: auto;
         display: flex;
         flex-direction: column;
         padding: 4vh;
@@ -473,8 +473,8 @@ a.demo--current {
       }
 
       #graph-1-title, #graph-2-title, #graph-3-title  {
-        font-size: 3vh;
-        font-variation-settings: 'wght' 80;
+        font-size: 2.5vh;
+        font-variation-settings: 'wght' 100;
       }
 
       #graph-1-num {
@@ -497,7 +497,7 @@ a.demo--current {
       #graph-2-num {
         font-family: TaubDisplayC;
         color: #f2635d;
-        font-size: 10vh;
+        font-size: 8vh;
         font-variation-settings: 'wght' 400;
       }
 
@@ -514,19 +514,17 @@ a.demo--current {
         font-family: TaubDisplayB;
         font-variation-settings: 'wght' 400;
         color: #fac8bf;
-        font-size: 10vh;
-      }
-
-      #data-interactive {
-        /* background-color: purple; */
-        padding-top: 60px;
-        line-height: 0em;
+        font-size: 8vh;
       }
 
       #data-year {
         font-size:9vw;
         font-variation-settings: 'wght' 150;
         line-height: 0.5em;
+      }
+
+      #animate-section {
+        padding: 4vh;
       }
 
       #grid-section {

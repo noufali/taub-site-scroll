@@ -4,6 +4,7 @@ var hei = window.innerHeight;
 var intro, dataSection;
 var anatomySection = document.getElementById("anatomy-section");
 var stylesSection = document.getElementById("styles-section");
+var animateSection = document.getElementById("animate-section");
 
 // Make Sections fullscreen on Desktop
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
@@ -24,13 +25,12 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
   stylesSection.style.width = wid + "px";
   stylesSection.style.height = hei + "px";
 
+  animateSection.style.width = wid + "px";
+  animateSection.style.height = hei + "px";
+
 
   window.onresize = resize;
 }
-
-var animateSection = document.getElementById("animate-section");
-animateSection.style.width = wid + "px";
-animateSection.style.height = hei + "px";
 
 var taub = ("Taub").split('');
 var e = ("data").split('');
