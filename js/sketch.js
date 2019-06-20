@@ -114,13 +114,16 @@ function showAnatomy() {
     height: hei
   }).appendTo(anatomySection);
 
-  var message = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.";
-  var text = new Two.Text(message, 100, 100, {
+  var message = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.";
+  var text = two.makeText(message, 72, 100, {
     alignment: 'left'
   });
   text.size = 20;
   text.fill = "#efdfd1";
-  // text.family = "TaubSans";
+  text.family = "Taubjs";
+  text.fontVariationSettings = "'wght' 0";
+  console.log(text)
+  //var circle = two.makeCircle(72, 100, 50);
 
   var w = document.getElementById("work");
   work = two.interpret(w);
@@ -181,6 +184,24 @@ function showAnatomy() {
   }).play();
 }
 
+$(document).ready(function(){
+  $(window).scroll(function(){
+    var scrollTop = $(document).scrollTop();
+    var divTop = $("#animate-section").offset().top;
+    var divBottom = divTop + $("#animate-section").height();
+    if (scrollTop >= divTop && scrollTop < divBottom) {
+      console.log("added");
+      $(".display-T").css("animation", "weight 4s infinite");
+    } else {
+      console.log("removed");
+      $(".display-T").css("animation", "");
+      // $('.display-T').removeAttr('animation');
+    }
+  })
+})
+function scrollAnimation() {
+  $
+}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
