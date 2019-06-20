@@ -358,7 +358,6 @@ font-family: TaubSans;
 font-size: 2.5vw;
 line-height: 0.5em;
 }
-
 #styles-1 {
   font-family: TaubSans-Light;
 }
@@ -604,18 +603,22 @@ line-height: 0.5em;
   }
 
   #styles-section{
-    padding: 4vh;
+    padding: 0;
   }
 
   #styles-title {
+    padding: 4vh;
+    /* background-color: blue; */
     font-variation-settings: 'wght' 100;
-    font-size: 8vw;
-    line-height: 1.4em;
-    margin-bottom: 15px;
+    font-size: 11vw;
+    line-height: 1.2em;
+    margin-bottom: 0px;
   }
   #styles-categories {
-    font-size: 5vw;
+    padding: 4vh;
+    padding-top: 0;
+    font-size: 7vw;
     display: inline-block;
-    line-height: 1em;
+    line-height: 0.5em;
   }
 }
