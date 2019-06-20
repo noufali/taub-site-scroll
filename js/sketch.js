@@ -1,21 +1,25 @@
 // WINDOW DIMENSIONS
 var wid = window.innerWidth;
 var hei = window.innerHeight;
-var intro, dataSection;
+// SECTIONS
+var intro = intro = document.getElementById('intro-section');
+var dataSection = document.getElementById("data-section");
 var anatomySection = document.getElementById("anatomy-section");
 var stylesSection = document.getElementById("styles-section");
 var animateSection = document.getElementById("animate-section");
+var grid = document.getElementById("grid-container");
+var slider = document.getElementById("whatyear");
+var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ\|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
+var two, skeleton, work, cursor;
 
-// Make Sections fullscreen on Desktop
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-  // no resizing
+  console.log("mobile");
 } else {
+  // Make Sections fullscreen on Desktop
   console.log("desktop");
-  intro = document.getElementById('intro-section');
   intro.style.width = wid + "px";
   intro.style.height = hei + "px";
 
-  dataSection = document.getElementById("data-section");
   dataSection.style.width = wid + "px";
   dataSection.style.height = hei + "px";
 
@@ -27,18 +31,11 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 
   animateSection.style.width = wid + "px";
   animateSection.style.height = hei + "px";
-
+  showAnatomy();
 
   window.onresize = resize;
 }
 
-var taub = ("Taub").split('');
-var e = ("data").split('');
-
-var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ\|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
-var grid = document.getElementById("grid-container");
-
-var slider = document.getElementById("whatyear");
 var interval = setInterval(function() {
   slider.stepUp();
   slider.dispatchEvent(new Event('input'));
@@ -98,12 +95,8 @@ function dataViz() {
 
   //requestAnimationFrame(dataViz);
 }
-
-var two, skeleton, work, cursor;
 showGrid();
-showAnatomy();
-
-// third section - grid
+// 4th section - grid
 function showGrid() {
   // Grid Characters
   for (let i = 0; i < characters.length; i++) {
@@ -114,7 +107,7 @@ function showGrid() {
     grid.appendChild(w);
   }
 }
-// fourth section - anatomy
+// 5th section - anatomy
 function showAnatomy() {
   two = new Two({
     width: wid,
@@ -179,8 +172,6 @@ function showAnatomy() {
     cursor.outline.translation.copy(cursor.translation);
   }).play();
 }
-
-
 
 
 function getRandomInt(min, max) {
