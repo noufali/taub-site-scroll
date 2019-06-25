@@ -412,7 +412,7 @@ line-height: 0.5em;
 
   .sans-h1 {
     font-family: TaubSans;
-    font-size: 15vh;
+    font-size: 10vh;
     font-variation-settings: 'wght' 80;
   }
 
@@ -450,14 +450,15 @@ line-height: 0.5em;
     width: auto;
     padding: 4vh;
     padding-bottom: 0em;
-    line-height: 0em;
+    line-height: 1em;
+    white-space: normal;
   }
 
   #intro-description {
     /* background-color: purple; */
     width:auto;
     padding: 4vh;
-    padding-top: 0px;
+    padding-top: 0;
     line-height: 1.5em;
   }
 
