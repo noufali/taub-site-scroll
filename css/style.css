@@ -80,7 +80,7 @@ flex-direction: row;
 
 .sans-h1 {
 font-family: TaubSans;
-font-size: 18vw;
+font-size: 8vw;
 font-variation-settings: 'wght' 80;
 }
 
@@ -131,21 +131,22 @@ cursor: default;
 #intro-section {
 background-color: #f2635d;
 color: #efdfd1;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 }
 
 #intro-title {
-/* background-color: green; */
-padding: 5em;
-line-height: 0em;
+  /* background-color: green; */
+  width: auto;
+  padding: 5em;
+  white-space: nowrap;
 }
 
 #intro-description {
 /* background-color: purple; */
 padding: 3em;
 padding-left: 0em;
-width:auto;
+/* width:auto; */
 }
 
 #animate-section {
