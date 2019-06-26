@@ -147,7 +147,7 @@ flex-wrap: wrap;
 }
 
 #intro-title {
-  background-color: #121c4e;
+  /* background-color: #121c4e; */
   position: relative;
   z-index: 1;
   width: auto;
