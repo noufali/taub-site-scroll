@@ -15,6 +15,7 @@ var two, skeleton, work, cursor, anatomyText;
 
 $( document ).ready(function() {
   var vid = document.getElementById("1111");
+  vid.load();
   vid.play();
   console.log( "ready!" );
 });
