@@ -188,26 +188,26 @@ body {
 
 #grid-section {
   background-color: #F2CAC1;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #grid-title {
   color: #263587;
-  display: flex;
-  justify-content: center;
   padding: 60px;
   padding-bottom: 30px;
 }
 
 #grid-container {
   /* background-color: pink; */
-  padding: 50px;
-  padding-top: 0;
-  padding-bottom: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 80px;
+  padding-top: 0px;
 }
 
 .grid-item {
@@ -232,7 +232,7 @@ body {
   pointer-events: none;
   font-family: TaubSans-Regular;
   color: #ffffff;
-  font-size: 10vw;
+  font-size: 8em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -453,15 +453,21 @@ body {
 @media (min-width: 1200px) {}
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  /* #intro-section {
-    background-color: purple;
-  } */
 
 }
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
 
-/* Medium devices (tablets, 768px and up) */
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #intro-section {
+    background-color: purple;
+  }
+}
+
+/* CSS rules here for screens lower than 768px (Medium Devices) */
 @media only screen and (max-width: 768px) {
   .sections {
     display: flex;
