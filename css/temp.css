@@ -1,0 +1,36 @@
+#intro-section {
+  background-color: #f2635d;
+  color: #efdfd1;
+  line-height: 0em;
+  display: flex;
+  flex-direction: column;
+}
+
+#intro-title {
+  background-color: rgba(98,21,40,0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+#intro-description {
+  /* background-color: rgba(98,21,40,0.5); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

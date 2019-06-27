@@ -3,6 +3,10 @@ var wid = window.innerWidth;
 var hei = window.innerHeight;
 // SECTIONS
 var intro = document.getElementById('intro-section');
+var vidContainer = document.getElementById('vid-container');
+var vid = document.getElementById('1111');
+var introTitle = document.getElementById('intro-title');
+var introDescription = document.getElementById('intro-description');
 var dataSection = document.getElementById("data-section");
 var anatomySection = document.getElementById("anatomy-section");
 var stylesSection = document.getElementById("styles-section");
@@ -13,13 +17,17 @@ var slider = document.getElementById("whatyear");
 var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ@|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
 var two, skeleton, work, cursor, anatomyText;
 
-$( document ).ready(function() {
-  $("#1111").get(0).play();
-  console.log( "ok?" );
-});
-
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
   console.log("mobile");
+
+  vidContainer.style.width = wid + "px";
+  vidContainer.style.height = "500px";
+
+  introTitle.style.width = wid + "px";
+  introTitle.style.height = "500px";
+
+  showGrid();
+
 } else {
   // Make Sections fullscreen on Desktop
   console.log("desktop");
@@ -37,7 +45,22 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
   animateSection.style.width = wid + "px";
   animateSection.style.height = hei + "px";
 
+  let ratio = (wid*924) / 2880;
+
+  vidContainer.style.width = wid + "px";
+  vidContainer.style.height = ratio + "px";
+
+  introTitle.style.width = wid + "px";
+  introTitle.style.height = ratio + "px";
+
+  let diff = hei - ratio;
+
+  introDescription.style.width = wid + "px";
+  introDescription.style.height = diff + "px";
+
   showAnatomy();
+  showGrid();
+  enlargeLetter();
 
   window.onresize = resize;
 }
@@ -101,7 +124,6 @@ function dataViz() {
 
   //requestAnimationFrame(dataViz);
 }
-showGrid();
 // 4th section - grid
 function showGrid() {
   // Grid Characters
@@ -112,6 +134,39 @@ function showGrid() {
     w.className = "grid-item";
     grid.appendChild(w);
   }
+}
+function enlargeLetter() {
+  $(document).on('mousemove', function(e){
+    $('#grid-enlarge').css({
+      left:  e.pageX,
+      top:   e.pageY
+    });
+    for(let i=0;i<characters.length;i++) {
+      let letter = document.getElementById('G' + i);
+      let txt = letter.innerHTML;
+      let big = document.getElementById("grid-enlarge");
+      letter.onmouseover = function(event) {
+        let target = event.target;
+        target.style.cursor = "pointer";
+        big.innerHTML = txt;
+        big.style.visibility = 'visible';
+      };
+
+      letter.onmouseout = function(event) {
+        let target = event.target;
+        big.style.visibility = 'hidden';
+      };
+    }
+    // $('.grid-item').mouseover(function(){
+    //   let id = $(this).attr('id');
+    //   // $(this).css("background-color", "green");
+    //   let letter = $("#" + id).text();
+    //   $('#grid-enlarge').css("visibility", "visible");
+    //   $('#grid-enlarge').html(letter + "");
+    // });
+
+
+  });
 }
 // 5th section - anatomy
 function showAnatomy() {
@@ -223,6 +278,19 @@ function resize() {
   intro.style.width = wid + "px";
   intro.style.height = hei + "px";
 
+  let ratio = (wid*924) / 2880;
+
+  vidContainer.style.width = wid + "px";
+  vidContainer.style.height = ratio + "px";
+
+  introTitle.style.width = wid + "px";
+  introTitle.style.height = ratio + "px";
+
+  let diff = hei - ratio;
+
+  introDescription.style.width = wid + "px";
+  introDescription.style.height = diff + "px";
+
   // resize Data Section
   dataSection.style.width = wid + "px";
   dataSection.style.height = hei + "px";
@@ -252,22 +320,3 @@ function resize() {
   // resize Styles Section
   stylesSection.style.height = hei + "px";
 }
-
-// // init controller
-// var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-//
-// // build scenes
-// new ScrollMagic.Scene({triggerElement: "#parallax1"})
-// 				.setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
-// 				.addIndicators()
-// 				.addTo(controller);
-//
-// new ScrollMagic.Scene({triggerElement: "#parallax2"})
-// 				.setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
-// 				.addIndicators()
-// 				.addTo(controller);
-//
-// new ScrollMagic.Scene({triggerElement: "#parallax3"})
-// 				.setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
-// 				.addIndicators()
-// 				.addTo(controller);

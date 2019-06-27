@@ -15,14 +15,19 @@
 <body>
   <!-- INTRODUCTION -->
   <div class="sections" id="intro-section">
-    <video id="1111" autoplay muted loop>
-      <source src="img/1111_dark_compressed_2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <div id="intro-title">
-      <h3 class="sans-h3">Introducing</h3>
-      <h1 class="sans-h1">Taub Type</h1>
+    <div id="vid-container">
+      <video id="vid-desktop" autoplay muted loop>
+        <source src="img/1111_dark_compressed_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="vid-mobile" autoplay muted loop>
+        <source src="img/1111_dark_compressed_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div id="intro-title">
+        <h3 class="sans-h3">Introducing</h3>
+        <h1 class="sans-h1">Taub Type</h1>
+      </div>
     </div>
 
     <div class="sans-p" id="intro-description">
@@ -90,8 +95,9 @@
 
   <!-- CHARACTER GRID -->
   <div class="sections" id="grid-section">
-    <div id="grid-title" class="sans-h3">Taub Character Set</div>
+    <div id="grid-title" class="sans-h2">Taub Character Set</div>
     <div id="grid-container"></div>
+    <div id="grid-enlarge"></div>
   </div>
 
   <!-- ANATOMY -->
