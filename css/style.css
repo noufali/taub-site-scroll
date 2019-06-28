@@ -144,7 +144,7 @@ body {
 
 .display-T {
   font-family: TaubDisplayA;
-  font-size: 55vh;
+  font-size: 25vw;
   font-variation-settings: 'wght' 500;
   color: #efdfd1;
   cursor: default;
@@ -341,7 +341,7 @@ body {
 #graph-1-num {
   /* background-color: pink; */
   font-family: TaubDisplayA;
-  font-size: 15vh;
+  font-size: 7vw;
   color: #f9ac84;
   font-variation-settings: 'wght' 300;
 }
@@ -358,7 +358,7 @@ body {
   /* background-color: yellow; */
   font-family: TaubDisplayC;
   color: #f2635d;
-  font-size: 15vh;
+  font-size: 7vw;
   font-variation-settings: 'wght' 400;
 }
 
@@ -375,7 +375,7 @@ body {
   font-family: TaubDisplayB;
   font-variation-settings: 'wght' 400;
   color: #fac8bf;
-  font-size: 15vh;
+  font-size: 7vw;
 }
 
 #data-stats {
@@ -609,7 +609,7 @@ body {
   #graph-1-num {
     /* background-color: pink; */
     font-family: TaubDisplayA;
-    font-size: 7vh;
+    font-size: 8vw;
     color: #f9ac84;
     font-variation-settings: 'wght' 300;
   }
@@ -628,7 +628,7 @@ body {
     /* background-color: lightblue; */
     font-family: TaubDisplayC;
     color: #f2635d;
-    font-size: 7vh;
+    font-size: 8vw;
     font-variation-settings: 'wght' 400;
   }
 
@@ -645,7 +645,7 @@ body {
     font-family: TaubDisplayB;
     font-variation-settings: 'wght' 400;
     color: #fac8bf;
-    font-size: 7vh;
+    font-size: 8vw;
   }
 
   #data-year {
@@ -680,7 +680,7 @@ body {
 
 
   #animate-section {
-    padding: 20vh;
+    padding: 20vw;
     box-sizing: border-box;
     flex-direction: row;
   }
@@ -776,7 +776,7 @@ body {
 
   .sans-h1 {
     font-family: TaubSans;
-    font-size: 10vh;
+    font-size: 20vw;
     font-variation-settings: 'wght' 80;
   }
 
@@ -799,7 +799,7 @@ body {
   }
 
   .display-T {
-    font-size: 20vh;
+    font-size: 40vw;
     font-variation-settings: 'wght' 500;
   }
 
@@ -877,14 +877,14 @@ body {
   #graph-1-title, #graph-2-title, #graph-3-title  {
     /* background-color: red; */
     width: auto;
-    font-size: 2.5vh;
+    font-size: 5vw;
     font-variation-settings: 'wght' 100;
   }
 
   #graph-1-num {
     /* background-color: pink; */
     font-family: TaubDisplayA;
-    font-size: 8vh;
+    font-size: 15vw;
     color: #f9ac84;
     font-variation-settings: 'wght' 300;
   }
@@ -902,7 +902,7 @@ body {
     /* background-color: lightblue; */
     font-family: TaubDisplayC;
     color: #f2635d;
-    font-size: 8vh;
+    font-size: 15vw;
     font-variation-settings: 'wght' 400;
   }
 
@@ -920,7 +920,7 @@ body {
     font-family: TaubDisplayB;
     font-variation-settings: 'wght' 400;
     color: #fac8bf;
-    font-size: 8vh;
+    font-size: 15vw;
   }
 
   #data-year {
