@@ -564,19 +564,14 @@ body {
   #intro-description {
     /* background-color: purple; */
     width:auto;
-    padding:10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
   #data-title {
     /* background-color: grey; */
-    padding:50px;
-    padding-top: 40px;
+    padding:40px;
     width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
   }
 
   #data-graphs {
@@ -589,8 +584,7 @@ body {
     width: auto;
     height: auto;
     padding: 40px;
-    padding-right: 50px;
-    padding-left: 80px;
+    padding-left:0px;
   }
 
   #graph-1 {
@@ -602,7 +596,8 @@ body {
   }
 
   #graph-1-title, #graph-2-title, #graph-3-title  {
-    /* background-color: red; */
+    font-family: TaubSans;
+    font-size: 2.5vw;
     width: auto;
   }
 
@@ -679,7 +674,6 @@ body {
   }
 
 
-
   #animate-section {
     padding: 20vh;
     box-sizing: border-box;
@@ -692,14 +686,14 @@ body {
   }
 
   #grid-title {
-    padding: 90px;
-    padding-bottom: 50px;
+    padding: 60px;
+    padding-bottom: 60px;
     line-height: 0em;
   }
 
   #grid-container {
     /* background-color: pink; */
-    padding: 50px;
+    padding: 60px;
     padding-top: 0;
     display: flex;
     flex-direction: row;
@@ -725,7 +719,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
   }
 
   #anatomy-pic {
@@ -735,30 +728,33 @@ body {
   }
 
   #anatomy-description {
-    padding: 0px;
-    /* background-color: yellow; */
+    /* background-color: yellow;  */
+    padding: 60px;
     width: auto;
     display: block !important;
   }
 
-  #styles-section{
-    padding: 0;
+  #styles-sans {
+    width: 100%;
+    padding: 4vh;
+  }
+  #styles-display {
+    width: 100%;
+    padding: 4vh;
   }
 
   #styles-title {
-    padding: 50px;
-    /* background-color: blue; */
-    font-variation-settings: 'wght' 100;
-    font-size: 11vw;
-    line-height: 1.2em;
-    margin-bottom: 0px;
+    font-size: 2.4vw;
+    white-space: nowrap;
   }
-  #styles-categories {
-    padding: 4vh;
-    padding-top: 0;
-    font-size: 7vw;
-    display: inline-block;
-    line-height: 0.5em;
+
+  #styles-categories-sans {
+    font-size:3vw;
+    line-height: normal;
+  }
+  #styles-categories-display {
+    font-size:3vw;
+    line-height: normal;
   }
 }
 
