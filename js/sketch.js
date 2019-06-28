@@ -16,7 +16,7 @@ var gridSection = document.getElementById("grid-section");
 var grid = document.getElementById("grid-container");
 var slider = document.getElementById("whatyear");
 var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ@|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
-var two, skeleton, work, cursor, anatomyText;
+var two, skeleton, work, cursor, anatomyText, anatomyText2;
 
 if( wid > 1024 ) {
   console.log("desktop");
@@ -196,14 +196,22 @@ function showAnatomy() {
     height: hei
   }).appendTo(anatomySection);
 
-  var message = "Taub Type draws its inspiration from the works of Karl Gerstner and Otl Aicher and was drawn on an offset pixel grid, which informs Taub Sans’ construction, and connects to our iconography and data visualizations.";
-  anatomyText = two.makeText(message, 50, two.height/10, {
+  var message = "Taub Type draws its inspiration from the works of Karl Gerstner and Otl Aicher and was drawn on an offset pixel grid, which informs Taub Sans’ construction, and connects to our iconography";
+  var message2 = "and data visualizations.";
+  anatomyText = two.makeText(message, 75, two.height/10, {
+    alignment: 'left'
+  });
+  anatomyText2 = two.makeText(message2, 75, two.height/7, {
     alignment: 'left'
   });
   let textFactor = mapped(wid,0,2440,10,30);
   anatomyText.size = textFactor;
   anatomyText.fill = "#efdfd1";
   anatomyText.family = "TaubSans-Regular";
+
+  anatomyText2.size = textFactor;
+  anatomyText2.fill = "#efdfd1";
+  anatomyText2.family = "TaubSans-Regular";
 
   var w = document.getElementById("work");
   work = two.interpret(w);
@@ -343,6 +351,7 @@ function resize() {
 
   let textFactor = mapped(wid,0,2440,10,30);
   anatomyText.size = textFactor;
+  anatomyText2.size = textFactor;
 
   // resize Styles Section
   stylesSection.style.height = hei + "px";
