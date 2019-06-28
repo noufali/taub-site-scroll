@@ -174,10 +174,6 @@ body {
   justify-content: center;
   align-items: center;
   padding-left: 50px;
-  padding-right: 50px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 #animate-section {
@@ -412,49 +408,18 @@ body {
   font-size: 2.5vw;
   line-height: 0.5em;
 }
-#styles-1 {
-  font-family: TaubSans-Light;
-}
-#styles-2 {
-  font-family: TaubSans-Light-Italic;
-}
-#styles-3 {
-  font-family: TaubSans-Regular;
-}
-#styles-4 {
-  font-family: TaubSans-Regular-Italic;
-}
-#styles-5 {
-  font-family: TaubSans-Medium;
-}
-#styles-6 {
-  font-family: TaubSans-Medium-Italic;
-}
-#styles-7 {
-  font-family: TaubSans-Bold;
-}
-#styles-8 {
-  font-family: TaubSans-Bold-Italic;
-}
-#styles-9 {
-  font-family: TaubSans-Heavy;
-}
-#styles-10 {
-  font-family: TaubSans-Heavy-Italic;
-}
-#styles-11 {
-  font-family: TaubSans-Super;
-}
-#styles-12 {
-  font-family: TaubSans-Super-Italic;
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-
-}
+#styles-1 {font-family: TaubSans-Light}
+#styles-2 {font-family: TaubSans-Light-Italic}
+#styles-3 {font-family: TaubSans-Regular}
+#styles-4 {font-family: TaubSans-Regular-Italic}
+#styles-5 {font-family: TaubSans-Medium;}
+#styles-6 {font-family: TaubSans-Medium-Italic}
+#styles-7 {font-family: TaubSans-Bold}
+#styles-8 {font-family: TaubSans-Bold-Italic}
+#styles-9 {font-family: TaubSans-Heavy}
+#styles-10 {font-family: TaubSans-Heavy-Italic}
+#styles-11 {font-family: TaubSans-Super}
+#styles-12 {font-family: TaubSans-Super-Italic}
 
 /*
   ##Device = Tablets, Ipads (portrait)
@@ -462,13 +427,286 @@ body {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .sections {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sans-h1 {
+    font-family: TaubSans;
+    font-size: 10vw;
+    font-variation-settings: 'wght' 100;
+  }
+
+  .sans-h2 {
+    font-family: TaubSans;
+    font-size: 3.5vw;
+    font-variation-settings: 'wght' 90;
+  }
+
+  .sans-h3 {
+    font-family: TaubSans;
+    font-size: 3vw;
+    font-variation-settings: 'wght' 100;
+  }
+
+  .sans-p {
+    font-family: TaubSans;
+    font-size:2.5vw;
+    font-variation-settings: 'wght' 50;
+    line-height: 1.5em;
+  }
+
+  .display-T {
+    font-family: TaubDisplayA;
+    font-size: 25vh;
+    font-variation-settings: 'wght' 500;
+    color: #efdfd1;
+    cursor: default;
+  }
+
   #intro-section {
-    background-color: purple;
+    background-color: #f2635d;
+    color: #efdfd1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #intro-title {
+    /* background-color: rgba(98,21,40,0.8); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 0em;
+  }
+
+  #vid-container {
+    overflow:hidden;
+    box-sizing: border-box;
+  }
+
+  #vid-desktop {
+    display: none !important;
+  }
+
+  #vid-mobile {
+    width: 200% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  #intro-description {
+    /* background-color: purple; */
+    width:auto;
+    padding:10px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  #data-title {
+    /* background-color: grey; */
+    padding:50px;
+    padding-top: 40px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #data-graphs {
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    padding: 40px;
+    padding-right: 50px;
+    padding-left: 80px;
+  }
+
+  #graph-1 {
+    /* background-color: yellow; */
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  #graph-1-title, #graph-2-title, #graph-3-title  {
+    /* background-color: red; */
+    width: auto;
+  }
+
+  #graph-1-num {
+    /* background-color: pink; */
+    font-family: TaubDisplayA;
+    font-size: 7vh;
+    color: #f9ac84;
+    font-variation-settings: 'wght' 300;
+  }
+
+  #graph-2 {
+    /* background-color: green; */
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    overflow: hidden;
+    padding: 0px;
+  }
+
+  #graph-2-num {
+    /* background-color: lightblue; */
+    font-family: TaubDisplayC;
+    color: #f2635d;
+    font-size: 7vh;
+    font-variation-settings: 'wght' 400;
+  }
+
+  #graph-3 {
+    /* background-color: purple; */
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  #graph-3-num {
+    /* background-color: orange; */
+    font-family: TaubDisplayB;
+    font-variation-settings: 'wght' 400;
+    color: #fac8bf;
+    font-size: 7vh;
+  }
+
+  #data-year {
+    /* background-color: red; */
+    font-size:6vw;
+    font-variation-settings: 'wght' 150;
+    line-height: 0.5em;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 70%;
+    height: 3px;
+    background: rgba(0,0,0,0);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-color: #7569A9;
+    border-style: hidden hidden dotted hidden;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10%;
+    height: 6px;
+    background: #121c4e;
+    position: relative;
+    top: 3px;
+    border-radius: 20px;
+  }
+
+
+
+  #animate-section {
+    padding: 20vh;
+    box-sizing: border-box;
+    flex-direction: row;
+  }
+
+  #grid-section {
+    width: auto;
+    height: auto;
+  }
+
+  #grid-title {
+    padding: 90px;
+    padding-bottom: 50px;
+    line-height: 0em;
+  }
+
+  #grid-container {
+    /* background-color: pink; */
+    padding: 50px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .grid-item {
+    width: 3%;
+    height: 3%;
+    font-family: TaubSans-Regular;
+    font-variation-settings: 'wght' 150;
+    border: 0.5px solid #263587;
+    padding: 20px;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    color: #263587;
+  }
+  #anatomy-section {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+  }
+
+  #anatomy-pic {
+    visibility: visible;
+    width:70%;
+    height: auto;
+  }
+
+  #anatomy-description {
+    padding: 0px;
+    /* background-color: yellow; */
+    width: auto;
+    display: block !important;
+  }
+
+  #styles-section{
+    padding: 0;
+  }
+
+  #styles-title {
+    padding: 50px;
+    /* background-color: blue; */
+    font-variation-settings: 'wght' 100;
+    font-size: 11vw;
+    line-height: 1.2em;
+    margin-bottom: 0px;
+  }
+  #styles-categories {
+    padding: 4vh;
+    padding-top: 0;
+    font-size: 7vw;
+    display: inline-block;
+    line-height: 0.5em;
   }
 }
 
-/* CSS rules here for screens lower than 768px (Medium Devices) */
-@media only screen and (max-width: 768px) {
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
   .sections {
     display: flex;
     flex-direction: column;
@@ -507,6 +745,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     line-height: 2em;
+    background-color: aqua;
   }
 
   #vid-container {

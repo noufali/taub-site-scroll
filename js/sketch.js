@@ -4,7 +4,8 @@ var hei = window.innerHeight;
 // SECTIONS
 var intro = document.getElementById('intro-section');
 var vidContainer = document.getElementById('vid-container');
-var vid = document.getElementById('1111');
+var vidDesktop = document.getElementById('vid-desktop');
+var vidMobile = document.getElementById('vid-mobile');
 var introTitle = document.getElementById('intro-title');
 var introDescription = document.getElementById('intro-description');
 var dataSection = document.getElementById("data-section");
@@ -17,17 +18,38 @@ var slider = document.getElementById("whatyear");
 var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ@|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
 var two, skeleton, work, cursor, anatomyText;
 
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+if( wid < 480 ) {
   console.log("mobile");
 
   vidContainer.style.width = wid + "px";
   vidContainer.style.height = "500px";
+
+  vidDesktop.style.width = wid + "px";
+  vidDesktop.style.height = "auto";
+
+  vidMobile.style.width = wid + "px";
+  vidMobile.style.height = "auto";
 
   introTitle.style.width = wid + "px";
   introTitle.style.height = "500px";
 
   showGrid();
 
+} else if (wid < 1024) {
+  console.log("iPad")
+  vidContainer.style.width = wid + "px";
+  vidContainer.style.height = "500px";
+
+  vidDesktop.style.width = wid + "px";
+  vidDesktop.style.height = "auto";
+
+  vidMobile.style.width = wid + "px";
+  vidMobile.style.height = "auto";
+
+  introTitle.style.width = wid + "px";
+  introTitle.style.height = "500px";
+
+  showGrid();
 } else {
   // Make Sections fullscreen on Desktop
   console.log("desktop");
@@ -175,7 +197,7 @@ function showAnatomy() {
     height: hei
   }).appendTo(anatomySection);
 
-  var message = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.";
+  var message = "A low-contrast sans serif design, Taub Sans, is derived from the offset pixel grid developed for Taub Display.";
   anatomyText = two.makeText(message, 72, two.height/7, {
     alignment: 'left'
   });
@@ -282,6 +304,12 @@ function resize() {
 
   vidContainer.style.width = wid + "px";
   vidContainer.style.height = ratio + "px";
+
+  vidDesktop.style.width = wid + "px";
+  vidDesktop.style.height = "auto";
+
+  vidMobile.style.width = wid + "px";
+  vidMobile.style.height = "auto";
 
   introTitle.style.width = wid + "px";
   introTitle.style.height = ratio + "px";
