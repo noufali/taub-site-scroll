@@ -270,23 +270,20 @@ body {
   background-color: #7569A9;
   flex-direction: column;
   cursor: crosshair;
+  box-sizing: border-box;
 }
 
 #anatomy-description {
+  position: absolute;
   color: #efdfd1;
-  padding-left: 60px;
-  padding-top: 60px;
-  width: 30%;
-  /* background-color: pink; */
+  padding: 75px;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 #skeleton, #work, #anatomy-pic {
   visibility: hidden;
   width:0%;
-}
-
-#anatomy-description {
-  display: none;
 }
 
 #letter-grid {
@@ -322,7 +319,7 @@ body {
   align-items: flex-start;
   width: 70%;
   height: auto;
-  padding-left: 200px;
+  padding-left: 100px;
 }
 
 #graph-1-title, #graph-2-title, #graph-3-title {
@@ -481,6 +478,15 @@ body {
 #display-8 {font-family: TaubDisplay-80}
 #display-9 {font-family: TaubDisplay-90}
 #display-10 {font-family: TaubDisplay-100}
+
+#copyright {
+  /* background-color: yellow; */
+  position: relative;
+  font-family: TaubSans-Regular;
+  font-size: 1vw;
+  text-align: left;
+
+}
 
 /*
   ##Device = Tablets, Ipads (portrait)
@@ -728,9 +734,9 @@ body {
 
   #anatomy-description {
     /* background-color: yellow;  */
+    position: static;
     padding: 60px;
     width: auto;
-    display: block !important;
   }
 
   #styles-sans {
@@ -973,8 +979,8 @@ body {
 
   #anatomy-description {
     /* background-color: yellow; */
+    position: static;
     width: auto;
-    display: block !important;
     padding: 4vh;
   }
   #styles-sans {

@@ -1,128 +1,19 @@
-
-#data-section {
-  background-color: #efdfd1;
-  color: #121c4e;
+#styles-sans {
+  width: 100%;
+  padding: 4vh;
 }
-
-#data-title {
-  /* background-color: grey; */
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 75px;
-  padding-left: 75px;
+#styles-display {
+  width: 100%;
+  padding: 4vh;
 }
-#data-graphs {
-  /* background-color: blue; */
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 70%;
-  height: auto;
-  padding-left: 200px;
+#styles-title {
+  font-size: 5vw;
 }
-
-#graph-1-title, #graph-2-title, #graph-3-title {
-  font-family: TaubSans;
-  font-size: 1.5vw;
-  font-variation-settings: 'wght' 90;
-  line-height: 1.1;
+#styles-categories-sans {
+  font-size:7vw;
+  line-height: 0.5em;
 }
-
-#graph-1 {
-  /* background-color: brown; */
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
-
-#graph-1-num {
-  /* background-color: pink; */
-  font-family: TaubDisplayA;
-  font-size: 15vh;
-  color: #f9ac84;
-  font-variation-settings: 'wght' 300;
-}
-
-#graph-2 {
-  /* background-color: green; */
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 20px;
-}
-
-#graph-2-num {
-  /* background-color: yellow; */
-  font-family: TaubDisplayC;
-  color: #f2635d;
-  font-size: 15vh;
-  font-variation-settings: 'wght' 400;
-}
-
-#graph-3 {
-  /* background-color: purple; */
-  width: auto
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 60px;
-}
-
-#graph-3-num {
-  /* background-color: orange; */
-  font-family: TaubDisplayB;
-  font-variation-settings: 'wght' 400;
-  color: #fac8bf;
-  font-size: 15vh;
-}
-
-#data-stats {
-  /* background-color: purple; */
-  padding-top: 60px;
-  padding-bottom: 60px;
-  padding-right: 10px;
-  display: flex;
-  flex-direction: column;
-  flex-flow: column-reverse;
-  justify-content: space-between;
-}
-
-#data-interactive {
-  /* background-color: purple; */
-  padding-top: 60px;
-  line-height: 0em;
-}
-
-#data-year {
-  font-size:3vw;
-  font-variation-settings: 'wght' 150;
-  margin-bottom: 30px;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 70%;
-  height: 3px;
-  background: rgba(0,0,0,0);
-  outline: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  border-color: #7569A9;
-  border-style: hidden hidden dotted hidden;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 10%;
-  height: 7px;
-  background: #121c4e;
-  position: relative;
-  top: 3px;
-  border-radius: 20px;
+#styles-categories-display {
+  font-size:7vw;
+  line-height: 0.5em;
 }
