@@ -47,6 +47,46 @@
   src: url('fonts/TaubSans-SuperItalic.woff2') format('woff2');
 }
 @font-face {
+  font-family: TaubDisplay-10;
+  src: url('fonts/TaubDisplay-10.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-20;
+  src: url('fonts/TaubDisplay-20.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-30;
+  src: url('fonts/TaubDisplay-30.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-40;
+  src: url('fonts/TaubDisplay-40.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-50;
+  src: url('fonts/TaubDisplay-50.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-60;
+  src: url('fonts/TaubDisplay-60.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-70;
+  src: url('fonts/TaubDisplay-70.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-80;
+  src: url('fonts/TaubDisplay-80.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-90;
+  src: url('fonts/TaubDisplay-90.ttf');
+}
+@font-face {
+  font-family: TaubDisplay-100;
+  src: url('fonts/TaubDisplay-100.ttf');
+}
+@font-face {
   font-family: TaubSans;
   src: url('fonts/Taub_Nouf.ttf');
 }
@@ -174,6 +214,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-left: 50px;
+  box-sizing: border-box;
 }
 
 #animate-section {
@@ -392,34 +433,57 @@ body {
 #styles-section {
   background-color: #fac8bf;
   color: #263587;
-  padding: 60px;
+}
+#styles-sans {
+  /* background-color: grey; */
+  width: 50%;
+  padding: 50px;
+}
+#styles-display {
+  background-color: #EEAF8A;
+  width: 50%;
+  padding: 50px;
 }
 #styles-title {
-  /* background-color: pink; */
+  line-height: 1.5em;
+  /* background-color: pink;
   font-family: TaubSans;
   font-variation-settings: 'wght' 100;
   font-size: 4vw;
   line-height: 1.4em;
-  padding-right: 5em;
+  padding-right: 5em;*/
 }
-#styles-categories {
-  /* background-color: grey; */
-  font-family: TaubSans;
+#styles-categories-sans {
+  font-size: 2.3vw;
+  line-height: 0.5em;
+}
+#styles-categories-display {
   font-size: 2.5vw;
   line-height: 0.5em;
 }
-#styles-1 {font-family: TaubSans-Light}
-#styles-2 {font-family: TaubSans-Light-Italic}
-#styles-3 {font-family: TaubSans-Regular}
-#styles-4 {font-family: TaubSans-Regular-Italic}
-#styles-5 {font-family: TaubSans-Medium;}
-#styles-6 {font-family: TaubSans-Medium-Italic}
-#styles-7 {font-family: TaubSans-Bold}
-#styles-8 {font-family: TaubSans-Bold-Italic}
-#styles-9 {font-family: TaubSans-Heavy}
-#styles-10 {font-family: TaubSans-Heavy-Italic}
-#styles-11 {font-family: TaubSans-Super}
-#styles-12 {font-family: TaubSans-Super-Italic}
+#sans-1 {font-family: TaubSans-Light}
+#sans-2 {font-family: TaubSans-Light-Italic}
+#sans-3 {font-family: TaubSans-Regular}
+#sans-4 {font-family: TaubSans-Regular-Italic}
+#sans-5 {font-family: TaubSans-Medium}
+#sans-6 {font-family: TaubSans-Medium-Italic}
+#sans-7 {font-family: TaubSans-Bold}
+#sans-8 {font-family: TaubSans-Bold-Italic}
+#sans-9 {font-family: TaubSans-Heavy}
+#sans-10 {font-family: TaubSans-Heavy-Italic}
+#sans-11 {font-family: TaubSans-Super}
+#sans-12 {font-family: TaubSans-Super-Italic}
+
+#display-1 {font-family: TaubDisplay-10}
+#display-2 {font-family: TaubDisplay-20}
+#display-3 {font-family: TaubDisplay-30}
+#display-4 {font-family: TaubDisplay-40}
+#display-5 {font-family: TaubDisplay-50}
+#display-6 {font-family: TaubDisplay-60}
+#display-7 {font-family: TaubDisplay-70}
+#display-8 {font-family: TaubDisplay-80}
+#display-9 {font-family: TaubDisplay-90}
+#display-10 {font-family: TaubDisplay-100}
 
 /*
   ##Device = Tablets, Ipads (portrait)
