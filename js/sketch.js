@@ -18,7 +18,43 @@ var slider = document.getElementById("whatyear");
 var characters = ("!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¥¦§¨©ª«¬®¯°±²³´¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžƏȘșȚțȲȳȷəˆˇ˘˙˚˛˜˝ḂḃḊḋḞḟṀṁṖṗṪṫẀẁẂẃẄẅỲỳ––—―‖‘’‚‛“”„‟†‡•…‰‴‹›⁄⁰⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎€℠™⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟−≈≠≡≤≥◦ﬁﬂ@|{}[]˘¦•ˇ’ˆ‚‛ß").split('');
 var two, skeleton, work, cursor, anatomyText, anatomyText2;
 
-if( wid > 1024 ) {
+if( /Android|webOS|iPhone|BlackBerry/i.test(navigator.userAgent) ) {
+  // MOBILE
+  console.log("mobile");
+  console.log(wid);
+
+  vidContainer.style.width = wid + "px";
+  vidContainer.style.height = "500px";
+
+  vidDesktop.style.width = wid + "px";
+  vidDesktop.style.height = "auto";
+
+  vidMobile.style.width = wid + "px";
+  vidMobile.style.height = "auto";
+
+  introTitle.style.width = wid + "px";
+  introTitle.style.height = "500px";
+
+  showGrid();
+} else if( /iPad|iPod/i.test(navigator.userAgent) ) {
+  // IPAD
+  console.log("iPad");
+  console.log(wid);
+  vidContainer.style.width = wid + "px";
+  vidContainer.style.height = "500px";
+
+  vidDesktop.style.width = wid + "px";
+  vidDesktop.style.height = "auto";
+
+  vidMobile.style.width = wid + "px";
+  vidMobile.style.height = "auto";
+
+  introTitle.style.width = wid + "px";
+  introTitle.style.height = "500px";
+
+  showGrid();
+} else {
+  // DESKTOP
   console.log("desktop");
   console.log(wid);
   intro.style.width = wid + "px";
@@ -53,46 +89,6 @@ if( wid > 1024 ) {
   enlargeLetter();
 
   window.onresize = resize;
-}
-
-// IPAD
-if (wid >= 768 && wid <= 1024) {
-  console.log("iPad");
-  console.log(wid);
-  vidContainer.style.width = wid + "px";
-  vidContainer.style.height = "500px";
-
-  vidDesktop.style.width = wid + "px";
-  vidDesktop.style.height = "auto";
-
-  vidMobile.style.width = wid + "px";
-  vidMobile.style.height = "auto";
-
-  introTitle.style.width = wid + "px";
-  introTitle.style.height = "500px";
-
-  showGrid();
-}
-
-// MOBILE
-if(wid < 768) {
-  console.log("mobile");
-  console.log(wid);
-
-  vidContainer.style.width = wid + "px";
-  vidContainer.style.height = "500px";
-
-  vidDesktop.style.width = wid + "px";
-  vidDesktop.style.height = "auto";
-
-  vidMobile.style.width = wid + "px";
-  vidMobile.style.height = "auto";
-
-  introTitle.style.width = wid + "px";
-  introTitle.style.height = "500px";
-
-  showGrid();
-
 }
 
 var interval = setInterval(function() {
