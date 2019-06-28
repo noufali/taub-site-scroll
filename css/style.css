@@ -107,7 +107,6 @@
   font-family: TaubDisplayC;
   src: url('fonts/TaubDisplay-C.ttf') format('truetype');
 }
-
 body {
   margin: 0px;
   padding: 0px;
@@ -140,7 +139,7 @@ body {
   font-family: TaubSans;
   font-size:1.5vw;
   font-variation-settings: 'wght' 50;
-  line-height: 4vh;
+  line-height: 1.5em;
 }
 
 .display-T {
@@ -149,16 +148,6 @@ body {
   font-variation-settings: 'wght' 500;
   color: #efdfd1;
   cursor: default;
-}
-
-.parallaxParent {
-  height: 100vh;
-  overflow: hidden;
-}
-.parallaxParent > * {
-  height: 200%;
-  position: relative;
-  top: -100%;
 }
 
 @keyframes weight {
@@ -181,7 +170,6 @@ body {
 #intro-section {
   background-color: #f2635d;
   color: #efdfd1;
-  line-height: 0em;
   display: flex;
   flex-direction: column;
 }
@@ -196,6 +184,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  line-height: 0;
 }
 
 #vid-desktop {
@@ -213,8 +202,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 #animate-section {
@@ -320,6 +311,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   padding: 50px;
+  padding-left: 100px;
 }
 #data-graphs {
   /* background-color: blue; */
@@ -332,13 +324,20 @@ body {
   height: auto;
 }
 
+#graph-1-title, #graph-2-title, #graph-3-title {
+  font-family: TaubSans;
+  font-size: 1.5vw;
+  font-variation-settings: 'wght' 90;
+  line-height: 1.1;
+}
+
 #graph-1 {
   /* background-color: brown; */
   width: auto;
   display: flex;
   flex-direction: column;
-  padding: 50px;
-
+  padding-top: 50px;
+  padding-left: 50px;
   padding-bottom: 20px;
 }
 
@@ -446,12 +445,6 @@ body {
 }
 #styles-title {
   line-height: 1.5em;
-  /* background-color: pink;
-  font-family: TaubSans;
-  font-variation-settings: 'wght' 100;
-  font-size: 4vw;
-  line-height: 1.4em;
-  padding-right: 5em;*/
 }
 #styles-categories-sans {
   font-size: 2.3vw;

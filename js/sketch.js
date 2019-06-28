@@ -187,15 +187,6 @@ function enlargeLetter() {
         big.style.visibility = 'hidden';
       };
     }
-    // $('.grid-item').mouseover(function(){
-    //   let id = $(this).attr('id');
-    //   // $(this).css("background-color", "green");
-    //   let letter = $("#" + id).text();
-    //   $('#grid-enlarge').css("visibility", "visible");
-    //   $('#grid-enlarge').html(letter + "");
-    // });
-
-
   });
 }
 // 5th section - anatomy
@@ -205,8 +196,8 @@ function showAnatomy() {
     height: hei
   }).appendTo(anatomySection);
 
-  var message = "A low-contrast sans serif design, Taub Sans, is derived from the offset pixel grid developed for Taub Display.";
-  anatomyText = two.makeText(message, 72, two.height/7, {
+  var message = "Taub Type draws its inspiration from the works of Karl Gerstner and Otl Aicher and was drawn on an offset pixel grid, which informs Taub Sans’ construction, and connects to our iconography and data visualizations.";
+  anatomyText = two.makeText(message, 50, two.height/10, {
     alignment: 'left'
   });
   let textFactor = mapped(wid,0,2440,10,30);
