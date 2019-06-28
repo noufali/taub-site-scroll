@@ -322,6 +322,7 @@ body {
   align-items: flex-start;
   width: 70%;
   height: auto;
+  padding-left: 200px;
 }
 
 #graph-1-title, #graph-2-title, #graph-3-title {
@@ -337,7 +338,6 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 50px;
-  padding-left: 50px;
   padding-bottom: 20px;
 }
 
@@ -354,7 +354,6 @@ body {
   width: auto;
   display: flex;
   flex-direction: column;
-  padding-left: 60px;
   padding-bottom: 20px;
 }
 
@@ -371,7 +370,6 @@ body {
   width: auto
   display: flex;
   flex-direction: column;
-  padding-left: 60px;
   padding-bottom: 60px;
 }
 
