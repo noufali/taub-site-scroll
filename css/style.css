@@ -235,6 +235,7 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 75px;
+  padding-bottom: 75px;
   padding-top: 0px;
 }
 
