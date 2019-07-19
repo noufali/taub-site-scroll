@@ -486,7 +486,6 @@ body {
   font-family: TaubSans-Regular;
   font-size: 1vw;
   text-align: left;
-
 }
 
 /*
@@ -1002,5 +1001,9 @@ body {
   #styles-categories-display {
     font-size:7vw;
     line-height: 0.5em;
+  }
+
+  #copyright {
+    font-size: 4vw;
   }
 }
